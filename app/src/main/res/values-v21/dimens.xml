@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="column_leftmargin">8dp</dimen>
+    <dimen name="separater_height">1dp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">45dp</dimen>
+</resources>

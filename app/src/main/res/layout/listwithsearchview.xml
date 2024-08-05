@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Popup"
+    android:paddingBottom="50dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Select"
+
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- <View
+         android:layout_width="fill_parent"
+         android:layout_height="1dp"
+         android:layout_marginLeft="30dp"
+         android:layout_marginRight="30dp"
+         android:layout_marginBottom="30dp"
+         android:background="@color/colorPrimaryDark" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linear_layout"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/searchlayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_weight="0.1"
+            android:weightSum="1"
+
+
+            >
+
+
+
+            <AutoCompleteTextView
+                android:id="@+id/searchoptions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+
+                android:background="@drawable/small_circle"
+                android:cursorVisible="true"
+                android:dropDownWidth="match_parent"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:hint="Search Options"
+                android:imeOptions="actionSearch"
+                android:inputType="textAutoComplete|textAutoCorrect|textEmailAddress"
+                android:padding="3dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textCursorDrawable="@drawable/edit_cursor" />
+
+
+
+
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9">
+
+
+            <LinearLayout
+                android:id="@+id/cblayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:visibility="visible"
+                >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listView"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

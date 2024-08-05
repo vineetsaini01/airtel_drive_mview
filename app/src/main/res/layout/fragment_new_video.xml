@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="visible"
+                android:id="@+id/start_rl">
+                <Button
+                    android:id="@+id/start"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/circle"
+                    android:elevation="1dp"
+                    android:text="Start Video Test"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/main_ll"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <TextView android:text="" android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textview"
+                        android:textColor="@color/textColor"
+                        android:textStyle="bold"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/material_grey_100"
+                        android:gravity="center"
+                        android:textSize="@dimen/text"
+                        android:layout_marginLeft="@dimen/left_margin"/>
+
+
+                    <FrameLayout
+                        android:id="@+id/youtube_fragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/textview" />
+
+                    <!--<Button-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Start Test"-->
+                    <!--android:id="@+id/startBtn"-->
+                    <!--android:layout_below="@+id/youtube_fragment"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--/>-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Video Streaming Test Result"
+                        android:id="@+id/resultHdr"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separater_height"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginTop="3dp"/>
+
+                </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/res"
+
+                    android:layout_marginLeft="3dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Buffering Count"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/buffering_no"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Buffering Time 1080"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/buffering_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Data Used"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/data_used"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Device Height"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/deviceHeight"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Device Width"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/deviceWidth"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Latency"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/latencyNewVideoTest"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Packet Loss"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/newVideoTestPacketLoss"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Play Time 1080"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/playtime"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Time Stamp"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/timeStamp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Total Bytes"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/totalBytes"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Total Buffering Time(in ms)"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/buffer_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Total Video Duration(in sec)"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/vid_dur"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Stall Ratio"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/stallRatio"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Time Video Stall "
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/totalstallRatio"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="You Tube Url"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/youTubeUrl"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:text="Cdn Ip Response"
+                            android:textColor="@color/textColor"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:id="@+id/cdnIpResponse"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text"/>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/stoptest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="60dp"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/btn_bg"
+                        android:gravity="center"
+                        android:text="Stop"
+                        android:textColor="@color/accent"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold" />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        >
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+
+
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+</LinearLayout>

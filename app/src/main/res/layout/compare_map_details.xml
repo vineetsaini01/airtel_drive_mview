@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.newmview.wifi.bean.MapModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/ten_dp"
+        android:layout_margin="@dimen/five_dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fifteensp"
+                app:textValue="@{viewModel.mapId}"
+                />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/two_hundred_dp"
+               android:layout_weight="0.5"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:elevation="@dimen/ten_dp"
+                android:layout_margin="@dimen/five_dp"
+                android:background="@color/icon_bg_grey"
+                android:padding="@dimen/ten_dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Walk Map"
+                        android:gravity="center"/>
+                <com.newmview.wifi.customview.TouchImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/walkMapIv"
+
+                    app:mapImage="@{viewModel.mapPath}"
+                    />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/two_hundred_dp"
+android:layout_weight="0.5"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:elevation="@dimen/ten_dp"
+                android:layout_margin="@dimen/five_dp"
+                android:background="@color/icon_bg_grey"
+                android:padding="@dimen/ten_dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Signal Strength Heat Map"
+                    android:gravity="center"/>
+                <com.newmview.wifi.customview.TouchImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/heatMapIv"
+                    app:mapImage="@{viewModel.finalMapPath}"
+                    />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="@dimen/two_hundred_dp"
+                    android:layout_height="@dimen/two_hundred_dp"
+
+                    app:cardCornerRadius="@dimen/ten_dp"
+                    android:elevation="@dimen/ten_dp"
+                    android:layout_margin="@dimen/five_dp"
+                    android:background="@color/icon_bg_grey"
+                    android:padding="@dimen/ten_dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Link Speed Heat Map"
+                        android:gravity="center"/>
+                    <com.newmview.wifi.customview.TouchImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lsheatMapIv"
+                        app:mapImage="@{viewModel.lsHeatMapPath}"
+                        />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

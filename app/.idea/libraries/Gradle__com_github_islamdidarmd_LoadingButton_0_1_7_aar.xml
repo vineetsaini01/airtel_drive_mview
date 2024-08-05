@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.islamdidarmd:LoadingButton:0.1.7@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffc9ccf8685957072dee624f11eedf39/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffc9ccf8685957072dee624f11eedf39/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffc9ccf8685957072dee624f11eedf39/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b64f9c11b2d2ec93d053967ef31fbf6f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b64f9c11b2d2ec93d053967ef31fbf6f/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b64f9c11b2d2ec93d053967ef31fbf6f/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aecc448c763991cadb086c3ef33739f3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aecc448c763991cadb086c3ef33739f3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aecc448c763991cadb086c3ef33739f3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.islamdidarmd/LoadingButton/0.1.7/cd7de0811bbdb6525cfb750aeba57d23a625fd3e/LoadingButton-0.1.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

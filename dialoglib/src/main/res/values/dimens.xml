@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">2dp</dimen>
+    <dimen name="paddingTop">5dp</dimen>
+    <dimen name="paddingBottom">5dp</dimen>
+    <dimen name="title_textsize">15sp</dimen>
+    <dimen name="btn_margin">12dp</dimen>
+    <dimen name="btn_textsize">15sp</dimen>
+    <dimen name="btn_layout_margin">20dp</dimen>
+    <dimen name="desc_textsize">17sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+</resources>

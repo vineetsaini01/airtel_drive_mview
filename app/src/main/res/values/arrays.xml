@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_type" >
+        <item>Select Chart</item>
+        <item>4G </item>
+        <item>3G</item>
+        <item>2G</item>
+    </string-array>
+</resources>

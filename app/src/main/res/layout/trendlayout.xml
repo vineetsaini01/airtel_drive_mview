@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    tools:context=".Popup" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Trend"
+
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <RadioGroup
+        android:id="@+id/radioBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic" >
+
+       <!-- <RadioButton
+            android:id="@+id/FiveminuteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5 Minute"
+            android:textSize="19sp" />
+
+
+
+        <RadioButton
+            android:id="@+id/hourlyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hourly"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/dailyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/weeklyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weekly"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/monthlyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monthly"
+            android:textSize="19sp" />
+
+-->    </RadioGroup>
+
+</LinearLayout>

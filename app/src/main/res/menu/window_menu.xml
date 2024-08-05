@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/glass"
+        android:title="Glass"/>
+    <item android:id="@+id/wood"
+        android:title="Wood"/>
+    <item android:id="@+id/metal"
+        android:title="Metal"/>
+    <item android:id="@+id/officeWindow"
+        android:title="Office Window"/>
+
+</menu>

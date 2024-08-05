@@ -1,0 +1,209 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
+
+
+        <item name="radioButtonStyle">@style/MyRadioButtonStyle</item>
+        <item name="android:radioButtonStyle">@style/MyRadioButtonStyle</item>
+        <item name="checkboxStyle">@style/MyCheckBoxStyle</item>
+        <item name="android:checkboxStyle">@style/MyCheckBoxStyle</item>
+        <item name="fontFamily">@font/quicksand_semibold</item>
+    </style>
+    <style name="MyFloatingActionButton" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/transparent_black_percent_55</item>
+        <!-- color used by the icon -->
+        <item name="tint">@color/transparent_black_percent_55</item>
+        <item name="materialThemeOverlay">@style/MyFabOverlay</item>
+    </style>
+    <style name="MyFabOverlay">
+        <item name="colorSecondary">@color/transparent_black_percent_55</item>
+        <!-- color used by the icon -->
+        <item name="colorOnSecondary">@color/transparent_black_percent_55</item>
+    </style>
+    <style name="ImageCardTheme" >
+        <item name="android:layout_gravity">end</item>
+        <item name="android:layout_marginEnd">@dimen/ten_dp</item>
+        <item name="cardBackgroundColor">@color/powder_blue</item>
+        <item name="android:layout_marginTop">@dimen/twenty_dp</item>
+        <item name="cardCornerRadius">@dimen/thirtydp</item>
+        <item name="background">?android:attr/selectableItemBackground</item>
+        <item name="elevation">@dimen/fourty_dp</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:dropDownHorizontalOffset">-70dp</item>
+        <item name="android:dropDownVerticalOffset">-20dp</item>
+        <item name="android:padding">@dimen/five_dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/helvetica_neue_med</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Divider">
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/divider_color</item>
+    </style>
+
+    <style name="Divider_invisible">
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="editviewSecond">
+        <item name="android:layout_height">40sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bookborder</item>
+        <item name="android:paddingLeft">5sp</item>
+
+    </style>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+<style name="CardViewTextTheme" parent="android:Widget.TextView">
+    <item name="android:textStyle">bold</item>
+    <item name="textSize">@dimen/fifteensp</item>
+    <item name="textColor">@color/black</item>
+    <item name="android:layout_margin">@dimen/five_dp</item>
+    <item name="android:padding">@dimen/ten_dp</item>
+
+</style>
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/app_theme</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/app_theme</item>
+    </style>
+    <style name="AppTheme.TranslucentNavigation" parent="AppTheme">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="MyCheckBoxStyle" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
+    <item name="android:textColor">@drawable/my_compound_button_color_selector</item>
+    <item name="buttonTint">@drawable/my_compound_button_color_selector</item>
+</style>
+
+<style name="MyRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+<item name="android:textColor">@drawable/my_compound_button_color_selector</item>
+<item name="buttonTint">@drawable/my_compound_button_color_selector</item>
+</style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="MonthPickerDialogStyle">
+        <item name="headerBgColor">@color/app_theme</item>
+        <item name="monthBgSelectedColor">@color/app_theme</item>
+        <item name="dialogActionButtonColor">@color/app_theme</item>
+    </style>
+
+    <style name="EditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/app_theme</item>
+        <item name="colorControlActivated">@color/app_theme</item>
+        <item name="colorControlHighlight">@color/app_theme</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+    <style name="MyProgressBar" parent="@style/Widget.AppCompat.ProgressBar">
+
+        <item name="android:minWidth">50dp</item>
+
+
+    </style>
+
+
+        <style name="sidePanelTextViewStylingTheme" parent="android:Widget.TextView">
+            <item name="android:textColor">@color/black_color</item>
+            <item name="android:itemBackground">@color/white</item>
+            <item name="android:fontFamily">@font/helvetica_neue_med</item>
+            <item name="android:textSize">@dimen/seventeen_sp</item>
+        </style>
+
+    <style name="table_header" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:itemBackground">@color/white</item>
+        <item name="android:textSize">@dimen/seventeen_sp</item>
+        <item name="android:gravity">start</item>
+
+    </style>
+
+<style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+</style>
+
+
+        <style name="popupTextViewStylingTheme" parent="android:Widget.TextView">
+            <item name="android:textColor">@color/black</item>
+            <item name="android:itemBackground">@color/white</item>
+            <item name="android:textSize">@dimen/thirteen_sp</item>
+            <item name="android:padding">@dimen/fifteen_dp</item>
+        </style>
+
+    <style name="ExtendedFloatingActionBtnTheme" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="iconTint">@color/white</item>
+        <item name="rippleColor">@color/app_theme</item>
+        <item name="backgroundTint">@color/black</item>
+    </style>
+
+    <style name="CardButtonTheme">
+            <item name="android:layout_gravity">end</item>
+            <item name="android:layout_marginEnd">@dimen/ten_dp</item>
+            <item name="cardBackgroundColor">@color/black</item>
+            <item name="cardCornerRadius">@dimen/twenty_dp</item>
+        <item name="android:clickable">true</item>
+            <item name="android:foreground">?android:attr/selectableItemBackground</item>
+            <item name="elevation">@dimen/twenty_dp</item>
+
+    </style>
+
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/app_theme</item>
+
+    </style>
+
+
+    // by swapnil bansal 01/05/2022
+    <style name="roundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">10dp</item>
+        <item name="android:textColor">#000000</item>
+            </style>
+
+
+    <style name="CustomCheckbox02" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+        <item name="android:background">@android:color/transparent</item>
+
+
+    </style>
+
+
+    <dimen name="seventeen_sp">17sp</dimen>
+    <dimen name="fifteen_dp">15dp</dimen>
+    <dimen name="seventeen_dp">17dp</dimen>
+    <dimen name="thirteen_sp">13sp</dimen>
+
+</resources>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/ten_dp"
+        tools:context=".CampaignActivity">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridLayout"
+            android:columnCount="2"
+            android:orientation="vertical"
+            android:rowCount="2">
+            <androidx.cardview.widget.CardView
+                android:layout_height="@dimen/one_hundred_fifty"
+                android:layout_width="@dimen/one_hundred_fifty"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:id="@+id/driveCardView"
+                android:layout_margin="@dimen/ten_dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drive"
+                        android:theme="@style/CardViewTextTheme"
+                        android:textColor="@color/black"
+
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="@dimen/sixty_dp"
+                        style="@style/ImageCardTheme">
+                        <ImageView
+                            android:layout_width="@dimen/thirtydp"
+                            android:layout_height="@dimen/thirtydp"
+                            android:src="@drawable/ic_cloud_drive"
+                            android:layout_gravity="center"
+
+                            />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_height="@dimen/one_hundred_fifty"
+                android:layout_width="@dimen/one_hundred_fifty"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:id="@+id/workOrderCardView"
+                android:layout_margin="@dimen/ten_dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workOrder"
+                        android:theme="@style/CardViewTextTheme"
+                        android:textColor="@color/black"
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="@dimen/sixty_dp"
+
+                        style="@style/ImageCardTheme">
+                        <ImageView
+                            android:layout_width="@dimen/thirtydp"
+                            android:layout_height="@dimen/thirtydp"
+                            android:src="@drawable/ic_work_order"
+
+                            android:layout_gravity="center"
+
+                            />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_height="@dimen/one_hundred_fifty"
+                android:layout_width="@dimen/one_hundred_fifty"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:id="@+id/buildingCardView"
+                android:layout_margin="@dimen/ten_dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/building"
+                        android:theme="@style/CardViewTextTheme"
+                        android:textColor="@color/black"
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="@dimen/sixty_dp"
+                        style="@style/ImageCardTheme"
+                        >
+                        <ImageView
+                            android:layout_width="@dimen/thirtydp"
+                            android:layout_height="@dimen/thirtydp"
+                            android:src="@drawable/ic_bulding_icon"
+                            android:layout_gravity="center"
+
+                            />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_height="@dimen/one_hundred_fifty"
+                android:layout_width="@dimen/one_hundred_fifty"
+                app:cardCornerRadius="@dimen/ten_dp"
+                android:id="@+id/dashboardCardView"
+                android:layout_margin="@dimen/ten_dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dashboard"
+                        android:theme="@style/CardViewTextTheme"
+                        android:textColor="@color/black"
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="@dimen/sixty_dp"
+                        style="@style/ImageCardTheme">
+                        <ImageView
+                            android:layout_width="@dimen/thirtydp"
+                            android:layout_height="@dimen/thirtydp"
+                            android:src="@drawable/ic_dashboard"
+                            android:layout_gravity="center"
+
+                            />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+</layout>

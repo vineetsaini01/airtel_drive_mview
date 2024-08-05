@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:fillViewport="false"
+        android:background="@color/material_grey_100">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView android:text="" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textview"
+                android:textSize="@dimen/text_size"
+                android:textAlignment="center"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/material_grey_100"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                />
+
+            <!--<TextView-->
+            <!--android:id="@+id/line_top"-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:paddingBottom="5dip"-->
+            <!--android:layout_below="@+id/textview"-->
+            <!--android:layout_width="600dp"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#000"-->
+
+            <!--/>-->
+
+            <TextView android:text="" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/latlngtext"
+               android:textColor="@color/textColor"
+                android:background="@color/lightgreytransparent"
+                android:textStyle="bold"
+                />
+                <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+              />
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_legend"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+
+                >
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    >
+                    <ImageView
+                        android:id="@+id/google_map_marker_blue"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/blue_marker"
+                        />
+                    <TextView
+                        android:id="@+id/blue_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2G"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+
+                        android:textColor="#000000"
+
+
+                        />
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    >
+                    <ImageView
+                        android:id="@+id/purple"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/purple_marker"
+                        />
+                    <TextView
+                        android:id="@+id/purpletxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3G"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+
+                        android:textColor="#000000"
+
+
+                        />
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    >
+                    <ImageView
+                        android:id="@+id/red"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/redorange_marker"
+                        />
+                    <TextView
+                        android:id="@+id/redtxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4G"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+
+                        android:textColor="#000000"
+
+
+                        />
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    >
+                    <ImageView
+                        android:id="@+id/yellow"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/yellowish_marker"
+                        android:layout_toRightOf="@+id/call_txt"/>
+                    <TextView
+                        android:id="@+id/yellowtxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NS"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+
+                        android:textColor="#000000"
+
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:id="@+id/ll_buttons">
+
+                <!-- <Button
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Start Test"
+                     android:id="@+id/startBtn"
+                     android:layout_weight="1"
+                     android:layout_centerHorizontal="true"
+                     android:background="#ff7aff24"
+                     />
+     -->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="Start Test"
+                    android:id="@+id/startBtn"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+
+
+                    />
+                <!--<Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save Test"
+                    android:id="@+id/saveBtn"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    />-->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="Save Test"
+                    android:id="@+id/saveBtn"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+
+
+                    />
+
+                <!--<Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear Map"
+                    android:id="@+id/clearBtn"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    />
+    -->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="Clear Map"
+                    android:id="@+id/clearBtn"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+
+
+                    />
+            </LinearLayout>
+
+            <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Start Test"-->
+            <!--android:id="@+id/startBtn"-->
+            <!--android:layout_below="@+id/youtube_fragment"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--/>-->
+
+            <!--<RelativeLayout-->
+            <!--android:id="@+id/r1_home"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_below="@+id/mapView"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:background="#ff7aff24"-->
+            <!--android:elevation="4dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_marginRight="5dp">-->
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Captured Results"-->
+            <!--android:id="@+id/resultHdr"-->
+            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textColor="#2b2b2b"-->
+            <!--android:textSize="18sp"-->
+
+            <!--/>-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/line"-->
+            <!--style="?android:attr/listSeparatorTextViewStyle"-->
+            <!--android:paddingTop="5dip"-->
+            <!--android:paddingBottom="5dip"-->
+            <!--android:layout_below="@+id/resultHdr"-->
+            <!--android:layout_width="230dp"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#000"-->
+
+            <!--/>-->
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+
+            <!--android:id="@+id/result"-->
+            <!--android:layout_below="@+id/line"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textColor="#2b2b2b"-->
+            <!--android:textSize="16sp"-->
+            <!--android:layout_marginLeft="50dp"-->
+
+            <!--/>-->
+
+            <!--</RelativeLayout>-->
+
+            <!--android:layout_below="@+id/ll_buttons"-->
+            <LinearLayout
+                android:id="@+id/rlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <TextView android:text=""
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/test_stats"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    android:layout_weight="0.8"
+                    android:paddingLeft="2dp"
+
+                    />
+
+                <ToggleButton
+                    android:id="@+id/camerafollowtg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:textOff=""
+                    android:textOn=""
+
+                    android:background="@drawable/camera_toggle"
+                    android:layout_weight="0.2"/>
+            </LinearLayout>
+            </LinearLayout>
+
+
+
+
+    </ScrollView>
+</LinearLayout>

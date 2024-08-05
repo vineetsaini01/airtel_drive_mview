@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FiveGParametersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/five_dp"
+            android:padding="@dimen/ten_dp"
+            android:layout_weight="0.5">
+
+            <LinearLayout
+                android:id="@+id/primary_sim_layout"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/five_dp"
+                        android:src="@drawable/ic_sim" />
+
+                    <TextView
+                        android:id="@+id/txt_prim_OpVal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.9"
+                        android:gravity="center|start"
+                        android:text="SIM 1 AND 2"
+                        android:textAlignment="center"
+
+                        android:textColor="#000000"
+                        android:textSize="@dimen/twelve_sp"
+
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TableLayout
+                    android:id="@+id/prim_celltable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/ten_dp"
+                    android:gravity="center"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt_prim_Op"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="Sim Operator"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/tensp"></TextView>
+
+
+                        <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text=" "
+                            android:textSize="@dimen/tensp"></TextView>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_simOpearator"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="SIM O"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/tensp"></TextView>
+
+                        <TextView
+                            android:id="@+id/txt_simOpearatorVal0"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="  "
+                            android:textSize="@dimen/tensp"></TextView>
+
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_mcc"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="SIM 1 "
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/tensp"></TextView>
+
+                        <TextView
+                            android:id="@+id/txt_sim2"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="  "
+                            android:textSize="@dimen/tensp"></TextView>
+
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txt_mnc"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="FOR BOTH SIMS"
+                            android:textColor="@color/textColor"
+                            android:textSize="@dimen/tensp"></TextView>
+
+                        <TextView
+                            android:id="@+id/txt_mncVal"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/three_dp"
+                            android:layout_weight="0.5"
+                            android:text="  "
+                            android:textSize="@dimen/tensp"></TextView>
+
+                    </TableRow>
+
+
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_tac"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="TAC"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_tacVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                    </TableRow>-->
+
+
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsRsrq"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="SS RSRQ"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsRsrqVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                    </TableRow>-->
+
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsRsrp"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="SS RSRP"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsRsrpVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiSinr"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="CSI SINR"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiSinrVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsSinr"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="SS SINR"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_SsSinrVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_pciNew"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="PCI"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_pciNewVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiRsrp"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="CSI RSRP"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiRsrpVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiRsrq"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="CSI RSRQ"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_CsiRsrqVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_band"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="BAND"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_bandVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_arfcn"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="ARFCN"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_arfcnVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_cid"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="CID"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_cidVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_dbm"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="DBM"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_dbmVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_lat"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="Latitude"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_latVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+<!--                    <TableRow-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_lon"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="Longitude"-->
+<!--                            android:textColor="@color/textColor"-->
+<!--                            android:textSize="@dimen/tensp"></TextView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txt_longVal"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_marginLeft="@dimen/three_dp"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:text="  "-->
+<!--                            android:textSize="@dimen/tensp">-->
+
+<!--                        </TextView>-->
+
+<!--                    </TableRow>-->
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/imsi1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/textColor" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup:android-times-square:1.5.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f493095e3bc3fb1c8d668938237b661f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f493095e3bc3fb1c8d668938237b661f/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f493095e3bc3fb1c8d668938237b661f/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/688ece731c9b11e6e1936fe721058d30/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/688ece731c9b11e6e1936fe721058d30/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/688ece731c9b11e6e1936fe721058d30/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/android-times-square/1.5.0/8ea91b929890b763915b022cfae6b1e66d2a5a56/android-times-square-1.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

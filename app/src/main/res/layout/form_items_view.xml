@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="mapModel"
+            type="com.newmview.wifi.bean.MapModel" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+       android:layout_margin="@dimen/ten_dp"
+        app:cardCornerRadius="@dimen/ten_dp"
+        android:padding="@dimen/twenty_dp"
+        app:cardPreventCornerOverlap="false"
+        android:layout_height="wrap_content">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/ten_dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subscriber Details"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sixteen_sp"
+        android:layout_marginBottom="@dimen/ten_dp"
+        android:layout_margin="@dimen/ten_dp"
+        android:id="@+id/historyTitleTv"
+        android:backgroundTint="@color/focus_tint"
+        android:theme="@style/EditTextTheme"
+        android:textColorHint="@color/cpb_grey"/>
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/nameEt"
+        android:hint="Add Subscriber Name"
+        android:padding="@dimen/ten_dp"
+        android:layout_margin="@dimen/ten_dp"
+        android:backgroundTint="@color/focus_tint"
+        android:theme="@style/EditTextTheme"
+        android:textColorHint="@color/cpb_grey"/>
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/idEt"
+android:hint="Add Subscriber Mobile Number"
+        android:layout_margin="@dimen/ten_dp"
+        android:padding="@dimen/ten_dp"
+        android:inputType="number"
+        android:backgroundTint="@color/focus_tint"
+        android:theme="@style/EditTextTheme"
+        android:textColorHint="@color/cpb_grey"/>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fourty_dp"
+        android:id="@+id/doneBtn"
+        android:background="@drawable/btn_bg"
+        android:textColor="@color/white"
+        android:text="Done"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

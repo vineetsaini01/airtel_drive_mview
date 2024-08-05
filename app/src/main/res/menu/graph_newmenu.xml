@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/trending"
+        android:title="Trend"
+        android:visible="false"/>
+    <item android:id="@+id/Selectchart"
+        android:title="Select Chart Type"/>
+    <item android:id="@+id/groupingType"
+        android:title="Grouping Type"
+        android:visible="false"/>
+    <item android:id="@+id/select_date"
+        android:title="Select date"
+
+        />
+    <item android:id="@+id/select_graph"
+        android:title="Select Graph"
+
+        />
+    <item android:id="@+id/select_column"
+        android:title="Select Column"
+
+        />
+    <item android:id="@+id/select_filteroptions"
+        android:title="Select Filter Options"
+
+
+        />
+
+</menu>

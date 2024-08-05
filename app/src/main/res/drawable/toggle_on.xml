@@ -1,0 +1,4 @@
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/togg_on"
+    android:tileMode="disabled" android:gravity="end" >
+</bitmap>

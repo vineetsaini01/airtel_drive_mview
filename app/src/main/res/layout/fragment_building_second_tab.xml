@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="mapModel"
+            type="com.newmview.wifi.bean.MapModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black_percent_15"
+        android:id="@+id/mainRL"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        >
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:visibility="gone"
+                android:id="@+id/mapTable">
+                <TableRow
+                    android:layout_margin="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tablerow">
+
+                    <TextView
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/twelve_sp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:text="Survey Id:"
+                        android:textAllCaps="false"
+                        >
+                    </TextView>
+                    <TextView
+                        android:id="@+id/surveyIdTv"
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/twelve_sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/darkgrey"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+
+                        >
+                    </TextView>
+                    <TextView
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/twelve_sp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:text="User Id:"
+                        android:textAllCaps="false"
+                        >
+                    </TextView>
+                    <TextView
+                        android:id="@+id/userIdv"
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/twelve_sp"
+                        android:ellipsize="end"
+                        android:textColor="@color/darkgrey"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:maxLines="1"
+                        >
+                    </TextView>
+                </TableRow>
+
+
+
+
+                <TableRow
+                    android:layout_margin="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:text="SSID:"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/twelve_sp"
+                        >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/ssidTv"
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/darkgrey"
+                        android:textSize="@dimen/twelve_sp"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        >
+                    </TextView>
+                    <TextView
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:text="TimeStamp:"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/twelve_sp"
+                        >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/timeStampTv"
+                        android:layout_weight="0.25"
+                        android:layout_width="0dp"
+                        android:textColor="@color/darkgrey"
+                        android:textSize="@dimen/twelve_sp"
+                        android:ellipsize="end"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:maxLines="1"
+                        >
+                    </TextView>
+
+                </TableRow>
+
+            </TableLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/mapListRv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/five_dp"
+
+    />
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_margin="@dimen/ten_dp"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/app_theme"
+        app:icon="@drawable/ic_add"
+        android:id="@+id/fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/speedTestFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/black"
+        app:fabSize="normal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fab"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/fab"
+        app:icon="@drawable/ic_speed_test" />
+
+    <!--Action name text for the add alarm button-->
+    <!--Make sure that you are constraining this
+        Text to the add Alarm FAB button-->
+    <TextView
+        android:id="@+id/speedTestTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Speed Test"
+        android:textColor="@color/white"
+        android:padding="@dimen/five_dp"
+        android:visibility="gone"
+        android:background="@color/transparent_black_percent_55"
+        app:layout_constraintBottom_toBottomOf="@+id/speedTestFab"
+        app:layout_constraintEnd_toStartOf="@+id/speedTestFab"
+        app:layout_constraintTop_toTopOf="@+id/speedTestFab" />
+
+    <!--Floating action button for add person-->
+    <!--Make sure that you are constraining this button
+        to the add Alarm FAB button-->
+    <!--Make sure to add backgroundTint attribute to match
+         the entire application color-->
+    <!--because after changing the base application theme
+         the color of the FAB is set Blue as default-->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/indoorSurveyFab"
+        app:iconTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/black"
+        app:fabSize="auto"
+        android:layout_marginEnd="@dimen/ten_dp"
+        app:layout_constraintBottom_toTopOf="@+id/speedTestFab"
+        app:layout_constraintEnd_toEndOf="@+id/speedTestFab"
+        app:layout_constraintStart_toStartOf="@+id/speedTestFab"
+        app:icon="@drawable/ic_indoor_survey" />
+
+    <!--Action name text for the add person button-->
+    <!--Make sure that you are constraining this Text
+         to the add Person FAB button-->
+    <TextView
+        android:id="@+id/indoorSurveyTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Indoor Survey"
+        android:textColor="@color/white"
+        android:padding="@dimen/five_dp"
+        app:layout_constraintBottom_toBottomOf="@+id/indoorSurveyFab"
+        app:layout_constraintEnd_toStartOf="@+id/indoorSurveyFab"
+        app:layout_constraintTop_toTopOf="@+id/indoorSurveyFab"
+        android:background="@color/transparent_black_percent_55"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

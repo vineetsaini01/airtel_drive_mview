@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.newmview.wifi.bean.MapModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:id="@+id/tableRL">
+
+
+
+
+                <com.evrencoskun.tableview.TableView
+                    android:id="@+id/tableView"
+                    android:layout_width="match_parent"
+                    app:selected_color="@color/app_theme"
+                    android:layout_height="wrap_content"/>
+
+
+
+    </FrameLayout>
+</layout>

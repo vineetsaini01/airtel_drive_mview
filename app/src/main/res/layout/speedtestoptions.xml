@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:weightSum="4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="15dp"
+        android:id="@+id/web_layout">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_photo_library_black_24dp"
+            android:id="@+id/web"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/textsize_new"
+            android:text="@string/nav_photos"
+            android:textColor="@color/textColor"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.8"
+            android:gravity="center_vertical"
+            android:id="@+id/webspeed"/>
+    </LinearLayout>
+   <!-- <View
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:layout_height="1dp"
+        />-->
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="15dp"
+        android:id="@+id/video_layout">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@drawable/ic_local_movies_black_24dp"
+            android:id="@+id/video"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/textsize_new"
+            android:text="@string/nav_movies"
+            android:textColor="@color/textColor"
+            android:layout_weight="0.8"
+            android:layout_marginLeft="2dp"
+            android:gravity="center_vertical"
+            android:id="@+id/videospeed"/>
+    </LinearLayout>
+
+   <!-- <View
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:layout_height="1dp"
+        />-->
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+        
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="15dp"
+        android:id="@+id/download_layout">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@drawable/dwnld_black"
+            android:id="@+id/downlink"
+            />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/textsize_new"
+        android:text="@string/download"
+        android:textColor="@color/textColor"
+        
+        android:layout_weight="0.8"
+        android:layout_marginLeft="2dp"
+        android:gravity="center_vertical"
+        android:id="@+id/download"/>
+</LinearLayout>
+   <!-- <View
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:layout_height="1dp"
+        />-->
+    
+    
+    
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="15dp"
+        android:id="@+id/upload_layout"
+        >
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@drawable/upload_black"
+            android:id="@+id/uplink"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/textsize_new"
+        android:text="@string/upload"
+        
+        android:layout_weight="0.8"
+        android:textColor="@color/textColor"
+        android:layout_marginLeft="2dp"
+        android:gravity="center_vertical"
+        android:id="@+id/upload"/>
+</LinearLayout>
+   <!-- <View
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:layout_height="1dp"
+        />-->
+    
+    
+    
+
+</LinearLayout>

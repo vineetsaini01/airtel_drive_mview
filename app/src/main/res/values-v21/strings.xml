@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sms_retry">If sms is not received within 20 seconds , please retry!</string>
+</resources>

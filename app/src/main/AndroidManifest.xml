@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mview.airtel"
+    android:versionCode="10"
+    tools:ignore="GoogleAppIndexingWarning">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+
+    <uses-feature android:name="android.hardware.telephony" />
+
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission android:name="com.mcpsinc.mview.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.SEND" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.mcpsinc.mview.my_permissions.MY_PERMISSION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.READ_APN_SETTINGS"/>
+
+    <uses-permission
+        android:name="android.permission.WRITE_APN_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.CAPTURE_AUDIO_OUTPUT"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="com.newmview.wifi.application.MviewApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/airtel_icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:icon"
+        tools:targetApi="m">
+        <service
+            android:name="com.services.CallService"
+            android:permission="android.permission.BIND_INCALL_SERVICE"
+            android:exported="true">
+            <meta-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true" />
+            <meta-data android:name="android.telecom.IN_CALL_SERVICE_RINGING"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.telecom.InCallService"/>
+            </intent-filter>
+            </service>
+        <activity
+            android:name="com.newmview.wifi.activity.WebViewActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.newmview.wifi.activity.AppLaunch"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.dashboard.activity.EditImageActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.dashboard.activity.DashboardActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <service
+            android:name="com.services.MyAccessibilityService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/accessibility_service_label"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <service
+            android:name="com.newmview.wifi.ForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="location|phoneCall"
+            tools:ignore="Instantiatable"
+            tools:node="merge" />
+        <service
+            android:name="com.services.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.newmview.wifi.activity.MainActivity3" />
+
+        <receiver
+            android:name="com.newmview.wifi.MyReceiver2"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.newmview.wifi.CampaignActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="com.newmview.wifi.activity.CanvasActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:label="Create Floor Plan"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <!-- <action android:name="com.company.package.FOO"/> -->
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.newmview.wifi.activity.SavedFloorPlans"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="Saved Plans"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.newmview.wifi.activity.FinalWifiHeatMapActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="WiFi HeatMap"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.newmview.wifi.activity.WifiActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/wifiActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.newmview.wifi.activity.MainActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="tel" />
+            </intent-filter>
+
+            <!--
+        <intent-filter>
+            <action android:name="android.intent.action.SEND" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:mimeType="text/plain" />
+        </intent-filter>
+            -->
+        </activity>
+        <!--
+<receiver android:name="com.receiver.NetworkChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        -->
+        <activity
+            android:name="com.newmview.wifi.activity.PrivacyPolicyActivity"
+            android:label="@string/activity_title_privacy_policy" />
+        <activity
+            android:name="com.newmview.wifi.activity.mView_WebTest"
+            android:label="@string/webtest_title" />
+        <activity
+            android:name="com.newmview.wifi.activity.mView_UploadDownloadTest"
+            android:label="@string/uploadtest_title" />
+        <activity
+            android:name="com.newmview.wifi.activity.UploadDownloadSettings"
+            android:label="@string/upload_download" />
+        <activity
+            android:name="com.newmview.wifi.activity.MapSettings"
+            android:label="@string/map_settings_title" />
+        <activity
+            android:name="com.newmview.wifi.activity.MainSettings"
+            android:configChanges="orientation|screenLayout|screenSize|keyboard"
+            android:label="@string/main_settings_title" />
+        <activity
+            android:name="com.newmview.wifi.activity.call_sms"
+            android:label="@string/call_sms_mms" />
+        <activity
+            android:name="com.newmview.wifi.activity.mView_VideoTest"
+            android:label="@string/videotest_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.newmview.wifi.activity.ViewMyPhoneDetail"
+            android:label="@string/myphonedetail_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.newmview.wifi.SlidingTab.MyTabControl"
+            android:label="@string/myphonedetail_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.newmview.wifi.activity.ViewMyMap"
+            android:label="@string/mymapview_title"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.newmview.wifi.activity.GraphActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.dashboard.activity.GraphDetailsActivity"
+            android:configChanges="orientation|screenLayout|keyboard|screenSize" />
+        <activity
+            android:name="com.newmview.wifi.activity.NumberValidationActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.newmview.wifi.activity.TransparentActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name="com.newmview.wifi.activity.VideoPlayer" />
+        <activity
+            android:name="com.newmview.wifi.activity.TransparentImageActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.newmview.wifi.activity.HeatMapListActivity"
+            android:label="@string/heatmaplistactivityname" />
+        <activity
+            android:name="com.newmview.wifi.activity.BuildingTabActivity"
+            android:hardwareAccelerated="true"
+            android:label="@string/in_building" />
+        <activity
+            android:name="com.newmview.wifi.activity.CompareMapsActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="Compare Maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.newmview.wifi.activity.CreateWalkMapActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="Perform Walk Test"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCJv1rre5KTyJoWOlhZAOs7fZQYKZT1j84" />
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/pviewicon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="product_version"
+            android:value="@string/currentversion" /> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.newmview.wifi.ListenToPhoneState"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.newmview.wifi.AlarmReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.test.intent.action.ALARM" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.newmview.wifi.AlarmManagerBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.test.intent.action.ALARM" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.newmview.wifi.RestartReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="YouWillNeverKillMe" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.PeriodicAlarmRxr"
+            android:exported="true"
+            android:label=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action._BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.RebootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.REBOOT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.ImupServiceRxr"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.SMSReceiverBroadcast"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.OutCallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PRECISE_CALL_STATE" />
+            </intent-filter>
+        </receiver> <!-- by swapnil for app update 23/12/2022! -->
+        <receiver
+            android:name="com.receiver.AlarmRxr"
+            android:exported="true"
+            android:label=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.test.intent.action.ALARM" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.receiver.Wifi"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.services.WifiService"
+            android:label="Wifi Service"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            tools:ignore="Instantiatable" />
+        <service
+            android:name="com.services.ImupService"
+            android:label="Imup service"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.services.DetectedActivitiesIntentService"
+            android:exported="false" />
+        <service android:name="com.services.ActivityRecognitionService" /> <!-- by swapnil for app update 23/12/2022! -->
+        <service
+            android:name="com.services.GcmMessageHandler"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- by swapnil for app update 23/12/2022! -->
+        <service
+            android:name="com.services.RegistrationIntentService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+Set color used with incoming notification messages. This is used when no color is set for the incoming
+         notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <service
+            android:name="com.newmview.wifi.listenService"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+                 App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <service
+            android:name="com.newmview.wifi.activity.Background_service"
+            android:enabled="true"
+            android:exported="true" />
+        <service android:name="com.newmview.wifi.application.MviewService" />
+        <service android:name="com.services.Periodic_Background_service" />
+        <service
+            android:name="com.services.AllServices"
+            android:enabled="true"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+        <uses-library android:name="com.google.android.maps" />
+    </application>
+
+</manifest>

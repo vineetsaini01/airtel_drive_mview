@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="center">
+
+        <RelativeLayout
+            android:id="@+id/start_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle"
+                android:elevation="1dp"
+                android:text="New Video Test"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/main_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/left_margin"
+                    android:background="@color/material_grey_100"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text"
+                    android:textStyle="bold" />
+
+                <WebView
+                    android:id="@+id/web_view"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/textview" />
+
+                <TextView
+                    android:id="@+id/resultHdr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Video Streaming Test Result"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/separater_height"
+                    android:layout_marginTop="3dp"
+                    android:background="@android:color/darker_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Total Video Duration(in sec)"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/vid_durNew"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Number Of Buffering"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/buffering_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Total Buffering Time(in sec)"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/buffer_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:text="Total Play Time(in sec)"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/playtimeNew"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/stoptest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/btn_bg"
+                    android:gravity="center"
+                    android:text="Stop"
+                    android:textColor="@color/accent"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@drawable/dialog_bckgrnd_withinset"
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:text=""
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/product_sans_bold"
+        android:textColor="@color/textColor"
+        android:id="@+id/title"/>
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:src="@drawable/sim"
+        android:layout_gravity="center"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/message_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/btn_layout_margin"
+        android:layout_weight="0.25"
+        android:fontFamily="@font/product_san_regular"
+        android:gravity="center"
+        android:paddingLeft="@dimen/paddingTop"
+        android:paddingRight="@dimen/paddingTop"
+        android:scrollbars="vertical"
+        android:text=""
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/desc_textsize"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/btn_layout_margin"
+        android:padding="1dp"
+        android:layout_gravity="center">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.35"
+            android:text="Dismiss"
+            android:layout_margin="@dimen/btn_margin"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_bg2"
+            android:id="@+id/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_textsize"
+            android:textStyle="bold"
+            android:fontFamily="@font/googlesans_regular"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:text="Cancel"
+            android:layout_margin="@dimen/btn_margin"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_bg2"
+            android:id="@+id/cancel"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textSize="@dimen/btn_textsize"
+            android:fontFamily="@font/googlesans_regular"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</LinearLayout>

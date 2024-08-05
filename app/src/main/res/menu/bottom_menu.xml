@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/Home"
+        android:id="@+id/home"
+        android:icon="@drawable/home"/>
+ <!--   <item android:title="@string/call_sms_mms"
+        android:id="@+id/call"
+        android:icon="@drawable/phone"/>-->
+<!--    <item android:id="@+id/wifiheatmap"-->
+<!--        android:title="@string/wifi"-->
+<!--        android:icon="@drawable/ic_action_wifi"/>-->
+    <item android:id="@+id/speedtest"
+android:title="@string/speedtest"
+        android:icon="@drawable/speedometer"
+        android:visible="false"/>
+
+<!--
+    <item android:title="@string/battery"
+        android:id="@+id/btry"
+        android:icon="@drawable/battery"
+        android:visible="false"/>-->
+
+    <!--<item android:id="@+id/network"
+        android:title="@string/network"
+        android:icon="@drawable/network"/>-->
+    <!-- by swapnil 08/09/2023-->
+   <item android:id="@+id/chart"
+        android:title="@string/charts"
+       android:icon="@drawable/chart2"
+       android:visible="false"/>
+<!--    <item android:id="@+id/surveyList"-->
+<!--        android:title="@string/survey_list"-->
+<!--        android:icon="@drawable/list_black"-->
+<!--        android:visible="true"/>-->
+
+</menu>

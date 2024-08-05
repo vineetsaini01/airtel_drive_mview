@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Wifi List"
+        android:id="@+id/wifiListItem"
+        android:visible="false"/>
+    <item android:title="Add label"
+        android:id="@+id/addLabelItem"/>
+    <item android:title="Video Speed Test"
+        android:id="@+id/vdoSpeedTestItem"
+        android:visible="false"/>
+    <item android:title="Download Speed Test"
+        android:id="@+id/dwnldSpeedTestItem"
+        android:visible="false"/>
+    <item android:title="Upload Speed Test"
+        android:id="@+id/uploadSpeedTestItem"
+        android:visible="false"/>
+    <item android:title="Share"
+        android:id="@+id/shareItem"
+        android:visible="true"/>
+    <item android:title="Stats"
+        android:id="@+id/statsItem"
+        android:visible="false"/>
+    <item android:title="Auto Mode"
+        android:id="@+id/autoMode"
+        android:visible="true"/>
+    <item android:title="Manual Mode"
+        android:id="@+id/manualMode"
+        android:visible="true"/>
+
+</menu>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.aykuttasil:CallRecorder:1.5.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d26a69b75157d64e2d88ce339477758/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d26a69b75157d64e2d88ce339477758/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d26a69b75157d64e2d88ce339477758/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c22b8c96490cbe3bd4a1d9707ff9b101/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c22b8c96490cbe3bd4a1d9707ff9b101/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c22b8c96490cbe3bd4a1d9707ff9b101/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.aykuttasil/CallRecorder/1.5.3/41a42c8c1510f51ca77b327fd247f5db94df37bb/CallRecorder-1.5.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

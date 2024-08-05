@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+
+        android:id="@+id/db"
+
+        />
+
+    <TextView
+        android:id="@+id/grouptxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="Roboto-Medium"
+        android:textSize="20sp"
+        android:textColor="@color/app_theme"
+        android:textStyle="bold"
+        android:layout_weight="0.8"
+        android:padding="3dp"
+
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/pingLL">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Result"
+                android:textSize="18sp"/>
+
+
+            <TableLayout
+                android:id="@+id/pingTL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:layout_margin="10dp">
+
+                <TableRow
+                    android:padding="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/webPageUrl"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:text="webPageUrl"
+
+                        >
+                    </TextView>
+                    <TextView
+                        android:id="@+id/webPageUrlVal"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        >
+                    </TextView>
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/webPageLoadTime"
+                        android:text="webPageLoadTime"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:textColor="@color/textColor">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/webPageLoadTimeVal"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/ColorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/rtt_max_Tv"
+                        android:text="packetLoss"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="@dimen/column_leftmargin"
+                        android:textColor="@color/textColor">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/rtt_max_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/ColorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+
+                <!--..............................next...............................-->
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/rtt_avg_tv"
+                        android:text="latency"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/rtt_avg_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/time_Tv"
+                        android:text="dataUsed"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/time_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+                <!--..............................next...............................-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/rtt_dev_Tv"
+                        android:text="dnsResolutionTime"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/rtt_dev_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+
+                <!--..............................next...............................-->
+
+
+
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/packetLoss_Tv"
+                        android:text="no_of_redirection"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/packetLoss_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/hostTv"
+                        android:text="no_of_hops"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/textColor"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/host_val_Tv"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/column_leftmargin">
+                    </TextView>
+
+                </TableRow>
+
+
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="@dimen/fourty_dp"
+        android:layout_height="@dimen/fourty_dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="#795548"
+        android:indeterminateTintMode="src_in"
+        android:id="@+id/progressBar"/>
+</RelativeLayout>

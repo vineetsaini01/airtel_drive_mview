@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.anastr:speedviewlib:1.3.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b3ec128221fdd785fa100e410b95b8d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b3ec128221fdd785fa100e410b95b8d/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b3ec128221fdd785fa100e410b95b8d/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4ae3b347fb6fa71f40476050f3a4cc1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4ae3b347fb6fa71f40476050f3a4cc1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c4ae3b347fb6fa71f40476050f3a4cc1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.anastr/speedviewlib/1.3.0/694379f66afabdbdb8c9d222b2fc894d80ec67df/speedviewlib-1.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

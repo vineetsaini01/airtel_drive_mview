@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="2dp">
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/year"
+    android:textSize="20sp"
+    android:visibility="gone"/>
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/linechrt"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.7"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:id="@+id/scrollView"
+        >
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/table_layout"
+        android:layout_marginStart="10dp"
+        />
+    </ScrollView>
+
+        <Button
+            android:id="@+id/reset_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="Reset Zoom"
+            android:background="@drawable/btn_bg"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/accent"
+            android:textStyle="bold"
+            android:padding="3dp"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+
+
+            />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+android:visibility="gone"
+        android:gravity="center">
+
+    <Button
+        android:id="@+id/zoomin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Zoom In"
+        android:background="@drawable/btn_bg"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/accent"
+        android:textStyle="bold"
+        android:padding="3dp"
+        android:layout_margin="5dp"
+        android:textAllCaps="false"
+
+
+        android:layout_gravity="center"
+
+
+        />
+        <Button
+            android:id="@+id/zoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Zoom Out"
+            android:background="@drawable/btn_bg"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/accent"
+            android:textStyle="bold"
+            android:padding="3dp"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+
+
+            android:layout_gravity="center"
+
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

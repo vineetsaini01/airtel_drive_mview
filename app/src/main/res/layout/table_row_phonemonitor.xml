@@ -1,0 +1,153 @@
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+
+    android:weightSum="10"
+    >
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label1"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:layout_width="7dp"
+        />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_label2"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:layout_width="5dp"
+         />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label3"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label4"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:layout_width="7dp"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label5"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"
+        android:layout_width="5dp"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_label6"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_label7"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_label8"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label9"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_label10"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:textColor="#2b2b2b"
+        android:textSize="9sp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent" >
+
+        <View style="@style/Divider" />
+    </LinearLayout>
+</TableRow>

@@ -1,0 +1,531 @@
+<!--<android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">-->
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.newmview.wifi.activity.mView_WebTest"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:text="" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:textColor="@color/textColor"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/material_grey_100"
+        android:gravity="center"
+        android:textSize="@dimen/text_size"
+        android:layout_marginLeft="@dimen/left_margin"/>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/web_layout_height"
+        android:id="@+id/webView"
+        android:layout_below="@+id/textview"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/r1_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/startBtn"
+        android:layout_marginTop="3dp"
+
+        android:elevation="4dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <!-- android:background="#ff7aff24"-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1sp"
+
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Start Test"
+                android:id="@+id/startBtn"
+                android:background="@drawable/btn_bg"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/accent"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:enabled="true"
+
+
+                />
+        </RelativeLayout>
+
+
+
+        <!-- <TextView
+              android:id="@+id/line"
+              style="?android:attr/listSeparatorTextViewStyle"
+             android:layout_below="@+id/resultHdr"
+             android:layout_marginTop="3dp"
+              android:layout_width="150dp"
+              android:layout_height="1dp"
+              android:background="#000"
+             android:layout_gravity="center"
+
+              />-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/separater_height"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="3dp"/>
+
+        <!--new...............................-->
+
+
+        <!--...................Headings...............................-->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:id="@+id/headerlayout"
+
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        >
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/Url"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="Web Url"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:layout_weight="0.3"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/speed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="Speed"
+                            android:textSize="16sp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/response_time"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="Ping (ms)"
+                            android:textSize="16sp"
+                            android:layout_weight="0.3"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--...............Google.............-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:id="@+id/googlelayout"
+
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:id="@+id/googlelimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/google"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:gravity="center"
+                        >
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/googleurl"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="@string/google"
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.4"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/googlespeed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/googlert"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--...........................Facebook................-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/fblayout"
+
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:id="@+id/fbimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/facebook"
+
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fburl"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="@string/fb"
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.4"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fbspeed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fbrt"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--.......................Twitter.............................-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/twitterlayout"
+
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/twitter"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/gmail_logo"
+
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/twitterurl"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.4"
+                            android:text="@string/twitter"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/twitterspeed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/twitterrt"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!--..........................wikipedia..............................-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/wikilayout"
+
+                    android:layout_marginBottom="2dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/wikiimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/wikipedia"
+
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/wikiurl"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.4"
+                            android:text="@string/wiki"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/wikispeed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"/>
+
+                        <TextView
+                            android:id="@+id/wikirt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_weight="0.3"
+                            android:text=""
+                            android:textColor="@color/darkgrey"
+                            android:textSize="@dimen/text_size"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--...................yahoo....................-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/yahoolayout"
+
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/yahooimg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:src="@drawable/yahoo"
+
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:orientation="horizontal"
+                        android:id="@+id/linear_layout"
+                        android:gravity="center"
+                        >
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yahoourl"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/textColor"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text="@string/yahoo"
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.4"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yahoospeed"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:textColor="@color/darkgrey"
+                            android:layout_marginStart="@dimen/margin"
+                            android:text=""
+                            android:textSize="@dimen/text_size"
+                            android:layout_weight="0.3"
+                            android:visibility="invisible"
+                            />
+
+                        <TextView
+                            android:id="@+id/yahoort"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin"
+                            android:layout_marginLeft="@dimen/margin"
+                            android:layout_weight="0.3"
+                            android:text=""
+                            android:textColor="@color/darkgrey"
+                            android:textSize="@dimen/text_size"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+
+
+
+

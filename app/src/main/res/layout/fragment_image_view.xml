@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.newmview.wifi.bean.TestResults" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="top"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/shareLL"
+        android:layout_weight="0.9"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/main_relative"
+        android:background="@color/icon_bg_grey"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        >
+
+
+        <com.newmview.wifi.customview.TouchImageView
+            android:id="@+id/photoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:background="@color/icon_bg_grey"
+            android:transitionName="photoTransition"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/thumbnailprogress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/timestamp_TV"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/product_san_regular"
+                android:textSize="@dimen/seventeen_sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!--  <ImageView
+              android:id="@+id/photoIV"
+              android:layout_width="match_parent"
+              android:layout_height="200dp"
+              android:layout_centerInParent="true"/>-->
+    </RelativeLayout>
+
+    <include layout="@layout/legendslayout"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:id="@+id/legendsLayout"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.1"
+        app:foo="@{1}"
+
+
+        />
+        <include layout="@layout/ls_legendslayout"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/ls_legendsLayout"
+            android:visibility="gone"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.3"
+            app:foo="@{1}"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fourty_dp"
+            android:layout_marginLeft="5dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:id="@+id/backBtn"
+
+            android:tint="@color/app_theme"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fourty_dp"
+            android:layout_marginLeft="5dp"
+            android:text="Share"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:id="@+id/shareBtn"
+            android:tint="@color/app_theme"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+<!--
+    <include layout="@layout/media_menu_options"
+        android:id="@+id/optionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ten_dp"
+
+        />
+-->
+</LinearLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d32f2f</color>
+    <color name="colorPrimaryDark">#c72c2c</color>
+   <!-- <color name="dark_green">#006400</color>-->
+    <color name="dark_green">#66C448</color>
+    <color name="red">#F9775B</color>
+   <!-- <color name="light_green">#90EE90</color>-->
+    <color name="light_green">#A2DB74</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="divider_color">#000000</color>
+
+<!--     <color name="yellow">#FFFF00</color>-->
+    <color name="yellow">#E6EE4D</color>
+    <color name="accent">#FFFFFF</color>
+    <color name="tabcolor">#df2c19</color>
+    <color name="backgroudtheme">#e1e1e1</color>
+    <color name="header_color">#438EB9</color>
+
+    <color name="primary">#c0392b</color>
+    <color name="theme_color">#c0392b</color>
+    <color name="app_theme">#c0392b</color>
+    <color name="powder_blue">#B6D0E0</color>
+    <color name="icon_bg_grey">#F0F0F0</color>
+    <color name="ColorPrimary">#c72c2c</color>
+    <color name="ColorPrimaryDark">#c31c13</color>
+    <color name="tabsScrollColor">#FFFFFF</color>
+    <color name="textColor">#000000</color>
+    <color name="darkgrey">#A9A9A9</color>
+    <color name="lightgrey">#d3d3d3</color>
+    <color name="lightgreydashboard">#756C6C</color>
+    <color name="lightgreytransparent">#80d3d3d3</color>
+    <color name="design_textinput_error_color_light">#B3d3d3d3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="calendar_highlighted_day_bg">#c0392b</color>
+    <color name="calendar_selected_range_bg">#c0392b</color>
+    <color name="calendar_active_month_bg">#fff5f7f9</color>
+    <color name="calendar_selected_day_bg">#c0392b</color>
+    <color name="green">#008000</color>
+    <color name="pink">#ffc0cb</color>
+    <color name="orange">#ff4500</color>
+    <color name="blue">#0000ff</color>
+    <color name="blue_button_50_opacity">#80438EB9</color>
+    <color name="transparent_black_percent_5">#0D000000</color>
+    <color name="transparent_black_percent_10">#1A000000</color>
+    <color name="transparent_black_percent_15">#26000000</color>
+    <color name="transparent_black_percent_20">#33000000</color>
+    <color name="transparent_black_percent_25">#40000000</color>
+    <color name="transparent_black_percent_30">#4D000000</color>
+    <color name="transparent_black_percent_35">#59000000</color>
+    <color name="transparent_black_percent_40">#66000000</color>
+    <color name="transparent_black_percent_45">#73000000</color>
+    <color name="transparent_black_percent_50">#80000000</color>
+    <color name="transparent_black_percent_55">#8C000000</color>
+    <color name="transparent_black_percent_60">#99000000</color>
+    <color name="transparent_black_percent_65">#A6000000</color>
+    <color name="transparent_black_percent_70">#B3000000</color>
+    <color name="transparent_black_percent_75">#BF000000</color>
+    <color name="transparent_black_percent_80">#cc000000</color>
+    <color name="transparent_black_percent_85">#D9000000</color>
+    <color name="transparent_black_percent_90">#E6000000</color>
+    <color name="transparent_black_percent_95">#F2000000</color>
+
+</resources>

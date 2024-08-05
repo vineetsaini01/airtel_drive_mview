@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.maps.android:android-maps-utils:0.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f48b461f29dc62e01f83e95e257e98fa/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f48b461f29dc62e01f83e95e257e98fa/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f48b461f29dc62e01f83e95e257e98fa/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406f99c3fa9832cbc6859e7514a104a8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406f99c3fa9832cbc6859e7514a104a8/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/406f99c3fa9832cbc6859e7514a104a8/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d4ef79a067df8cd1c7af9966d236a23/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d4ef79a067df8cd1c7af9966d236a23/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d4ef79a067df8cd1c7af9966d236a23/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

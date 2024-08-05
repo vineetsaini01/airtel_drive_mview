@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:id="@+id/barframe2"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="0.7"
+        android:id="@+id/barchrt"/>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:id="@+id/scrollView"
+               >
+   <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/table_layout"
+       android:layout_marginStart="10dp"
+      />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Reset Zoom"
+        android:background="@drawable/btn_bg"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/accent"
+        android:textStyle="bold"
+        android:padding="3dp"
+        android:layout_margin="5dp"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+
+
+        />
+
+
+
+
+</LinearLayout>

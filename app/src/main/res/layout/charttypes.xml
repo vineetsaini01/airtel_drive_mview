@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    tools:context=".Popup" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Chart Types"
+
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <RadioGroup
+        android:id="@+id/radioBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic" >
+
+        <RadioButton
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bar Chart"
+            android:textSize="19sp" />
+
+
+
+        <RadioButton
+            android:id="@+id/linechart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Line Chart"
+            android:textSize="19sp" />
+       <!-- <RadioButton
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pie Chart"
+            android:textSize="19sp" />-->
+        <RadioButton
+            android:id="@+id/scatterchart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scatter Chart"
+            android:textSize="19sp" />
+        <RadioButton
+            android:id="@+id/areachart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Area Chart"
+            android:textSize="19sp" />
+    </RadioGroup>
+
+
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<LinearLayout android:id="@+id/r4_nc"
+    android:layout_below="@+id/r3_speedtest"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:elevation="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/Title_NC"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="My Network Coverage"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000"
+        android:paddingLeft="10dp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+
+        />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/l1_nc"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:elevation="2dp"
+        android:layout_weight="0.9">
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".7"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+
+
+            >
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart_nc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".3"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp
+"
+
+            >
+            <TableLayout
+                    android:id="@+id/child_layout_nc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

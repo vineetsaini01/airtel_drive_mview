@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="visible"
+            android:id="@+id/call_start_rl">
+            <Button
+                android:id="@+id/start"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle"
+                android:elevation="1dp"
+                android:text="Start Call Test"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/call_main_ll"
+            android:layout_marginTop="@dimen/fourty_dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:text="To:"
+                        android:gravity="center"/>
+
+                    <EditText
+                        android:id="@+id/mobile_txt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:gravity="left|center_vertical"
+                        android:maxLength="20"
+                        style="@style/editviewSecond"
+                        android:layout_weight="0.8"
+                        android:background="@null"
+                        android:layout_gravity="center"
+
+                        />
+
+
+                    <ImageView android:id="@+id/addressbook_img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/add"
+                        android:layout_margin="1dp"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--  <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dp">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Message"
+                      android:textColor="@color/textColor"
+                    />
+              </LinearLayout>
+              <android.support.v7.widget.CardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  >
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="5dp">
+
+
+                      <EditText
+                          android:id="@+id/smstext"
+                          android:layout_width="0dp"
+                          android:layout_height="40dp"
+                          android:singleLine="false"
+                          android:gravity="center_vertical"
+                          android:layout_toLeftOf="@+id/callLogPopupBt1"
+                          style="@style/editviewSecond"
+                          android:maxLength="120"
+                          android:layout_weight="0.8"
+                          android:background="@null"
+
+                          />
+                      <Button
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:background="@null"
+                          android:text="SEND"
+                          android:textColor="@color/primary"/>
+
+                  </LinearLayout>
+
+              </android.support.v7.widget.CardView>
+          -->
+            <TextView
+                android:id="@+id/call_txt11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Write Message"
+                android:paddingTop="20dp"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/mobileNumContainer"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                />
+
+            <RelativeLayout
+                android:id="@+id/mobileNumContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:visibility="gone"
+                android:layout_below="@+id/call_txt11">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="120"
+                    android:layout_toLeftOf="@+id/callLogPopupBt1"
+                    tools:ignore="UnknownIdInLayout">
+                    <EditText
+                        android:id="@+id/smstext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingRight="50dp"
+                        android:singleLine="false"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_toLeftOf="@+id/callLogPopupBt1"
+                        style="@style/editviewSecond"
+                        android:maxLength="120" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- <ImageView android:id="@+id/callLogPopupBt1"
+                     android:layout_width="40dp"
+                     android:layout_height="34dp"
+                     android:layout_marginTop="3dp"
+                     android:layout_alignParentRight="true"
+                     android:layout_marginRight="3dp"
+                     android:layout_gravity="center_vertical"
+                     android:textSize="12sp"
+                     android:visibility="invisible"
+                     android:src="@drawable/addressbook"
+                     />-->
+            </RelativeLayout>
+
+            <!--111111111111111111111-->
+
+
+            <TextView
+                android:id="@+id/mms_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select File for MMS"
+                android:paddingTop="20dp"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/mobileNumContainer1"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                />
+            <LinearLayout
+                android:id="@+id/Container3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/mms_txt"
+                android:background="@null"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/selectedfile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_toLeftOf="@+id/select_btn"
+                    style="@style/editviewSecond"
+                    android:layout_weight="0.7"
+
+
+                    />
+                <Button android:id="@+id/select_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_size"
+                    android:text="Select File"
+                    android:background="@null"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:layout_weight="0.3"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/call_text"
+                android:layout_marginTop="@dimen/sixty_dp"
+                android:padding="@dimen/padding_7dp"
+                android:textColor="@color/black"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/record_device_permissions"
+                android:layout_marginTop="@dimen/eighty_dp"
+                android:padding="@dimen/padding_7dp"
+                android:textColor="@color/black"
+                />
+
+            <!--22222222222222222222222222-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Container3"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:weightSum="3"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/call_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="Call"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+
+                    />
+                <Button
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="Cancel"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+
+                    />
+
+                <Button
+                    android:id="@+id/sms_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="SMS"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    />
+                <Button
+                    android:id="@+id/mms_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="MMS"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </FrameLayout>
+</LinearLayout>

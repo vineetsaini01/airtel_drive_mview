@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/title_4g"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="3G"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:layout_weight="0.1"
+                />
+
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/rscp_3gChart"
+                android:layout_marginBottom="20dp"
+
+                />
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/ecno_3gChart"
+                android:layout_marginBottom="20dp"
+
+                />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/throughput_3gChart"
+                android:layout_marginBottom="20dp"
+
+                />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/sinr_4g">
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sinr_4gChart"
+           />
+    </LinearLayout>-->
+
+
+

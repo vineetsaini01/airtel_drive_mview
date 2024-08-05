@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="@dimen/ten_dp"
+    card_view:cardElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ls_mapTv"
+            android:text="Link Speed Heat Map "
+            android:visibility="gone"
+            android:background="@drawable/top_boundary"
+            style="@style/popupTextViewStylingTheme"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mapTv"
+            android:text="Heat Map"
+            android:visibility="visible"
+            android:background="@drawable/top_boundary"
+            style="@style/popupTextViewStylingTheme"
+            />
+        <View  android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:id="@+id/share_divider"
+            android:visibility="gone"
+            android:background="@color/lightgrey"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/walkMap"
+            android:text="View Walk Map"
+            android:visibility="gone"
+            android:background="@drawable/top_boundary"
+            style="@style/popupTextViewStylingTheme"
+
+
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/floorPlan"
+            android:text="View Floor Plan"
+            android:visibility="visible"
+            android:background="@drawable/top_boundary"
+            style="@style/popupTextViewStylingTheme"
+
+
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deletePlan"
+            android:text="Delete Plan"
+            android:visibility="visible"
+            android:background="@drawable/top_boundary"
+            style="@style/popupTextViewStylingTheme"
+           
+
+
+            />
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</layout>

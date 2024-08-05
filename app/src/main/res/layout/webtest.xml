@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+   android:layout_height="match_parent"
+    tools:context="com.newmview.wifi.activity.mView_WebTest">
+   
+   <TextView android:text="" android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textview"
+      android:textSize="17dp"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true"
+       android:background="@color/material_grey_100"
+       android:layout_marginLeft="5dp"/>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/webView"
+        android:layout_below="@+id/textview"
+ />
+      
+<!--    <EditText
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/editText"
+      android:hint="Enter Text"
+      android:focusable="true"
+      android:textColorHighlight="#ff7eff15"
+      android:textColorHint="#ffff25e6"
+      android:layout_marginTop="46dp"
+      android:layout_below="@+id/imageView"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:layout_alignRight="@+id/imageView"
+      android:layout_alignEnd="@+id/imageView" /> -->
+      
+   <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Start Test"
+      android:id="@+id/startBtn"
+       android:layout_below="@+id/webView"
+       android:layout_centerHorizontal="true"
+      />
+
+    <RelativeLayout
+        android:id="@+id/r1_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/startBtn"
+        android:layout_marginTop="5dp"
+        android:background="#ff7aff24"
+        android:elevation="4dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Web Test Results"
+        android:id="@+id/resultHdr"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:textColor="#2b2b2b"
+        android:textSize="18sp"
+
+        />
+
+    <TextView
+        android:id="@+id/line"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:layout_below="@+id/resultHdr"
+        android:layout_width="150dp"
+        android:layout_height="1dp"
+        android:background="#000"
+
+        />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="test Result"
+      android:id="@+id/result"
+      android:layout_below="@+id/line"
+      android:layout_centerHorizontal="true"
+      android:textColor="#2b2b2b"
+        android:textSize="16sp"
+        android:layout_marginLeft="50dp"
+        />
+    
+</RelativeLayout>
+      
+</RelativeLayout>

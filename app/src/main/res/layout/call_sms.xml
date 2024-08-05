@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/call_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Mobile"
+        android:paddingTop="40dp"
+        android:textColor="#000000"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+
+        />
+    <RelativeLayout
+        android:id="@+id/mobileNumContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/call_txt"
+        android:paddingLeft="10dp">
+
+
+        <EditText
+            android:id="@+id/mobile_txt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="phone"
+
+            android:gravity="left|center_vertical"
+            android:maxLength="20"
+            style="@style/editviewSecond"
+            android:layout_toLeftOf="@+id/addressbook_img"
+            />
+
+
+        <ImageView android:id="@+id/addressbook_img"
+            android:layout_width="40dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="3dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="12sp"
+
+            android:src="@drawable/addressbook"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/call_txt11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write Message"
+        android:paddingTop="20dp"
+        android:textColor="#000000"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/mobileNumContainer"
+        android:textStyle="bold"
+        />
+    <RelativeLayout
+        android:id="@+id/mobileNumContainer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/call_txt11">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="120"
+            android:layout_toLeftOf="@+id/callLogPopupBt1"
+            >
+    <EditText
+        android:id="@+id/smstext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="50dp"
+        android:singleLine="false"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/callLogPopupBt1"
+        style="@style/editviewSecond"
+        android:maxLength="120"
+
+        />
+        </com.google.android.material.textfield.TextInputLayout>
+    <ImageView android:id="@+id/callLogPopupBt1"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="3dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="3dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="12sp"
+android:visibility="invisible"
+        android:src="@drawable/addressbook"
+        />
+        </RelativeLayout>
+
+    <!--111111111111111111111-->
+
+
+    <TextView
+        android:id="@+id/mms_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select File for MMS"
+        android:paddingTop="20dp"
+        android:textColor="#000000"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/mobileNumContainer1"
+        android:textStyle="bold"
+        />
+    <RelativeLayout
+        android:id="@+id/Container3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/mms_txt">
+        <TextView
+            android:id="@+id/selectedfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/select_btn"
+            style="@style/editviewSecond"
+
+            />
+        <Button android:id="@+id/select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="12sp"
+            android:text="Select File"
+            />
+    </RelativeLayout>
+
+    <!--22222222222222222222222222-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Container3"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+        <Button
+            android:id="@+id/call_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Call"
+            android:layout_alignParentLeft="true"
+            android:textSize="16sp"
+            />
+        <Button
+            android:id="@+id/sms_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="SMS"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            />
+        <Button
+            android:id="@+id/mms_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="MMS"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

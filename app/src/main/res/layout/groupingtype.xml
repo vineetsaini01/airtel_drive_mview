@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    tools:context=".Popup" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Grouping Type"
+
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <RadioGroup
+        android:id="@+id/radioBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic" >
+
+        <RadioButton
+            android:id="@+id/Temporal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temporal"
+            android:textSize="19sp" />
+
+
+
+        <RadioButton
+            android:id="@+id/Demography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Demography"
+            android:textSize="19sp" />
+
+        <RadioButton
+            android:id="@+id/Geography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Geography"
+            android:textSize="19sp" />
+
+
+    </RadioGroup>
+
+</LinearLayout>

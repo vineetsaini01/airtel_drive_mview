@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2107811273/mView.iml" filepath="$PROJECT_DIR$/.idea/modules/2107811273/mView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mView.app.iml" filepath="$PROJECT_DIR$/.idea/modules/mView.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-749747337/mView.dialoglib.iml" filepath="$PROJECT_DIR$/.idea/modules/-749747337/mView.dialoglib.iml" />
+    </modules>
+  </component>
+</project>

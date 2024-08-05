@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:orientation="vertical">
+
+        <!-- <TextView android:text="" android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/textview"
+             android:textSize="17dp"
+             android:layout_alignParentTop="true"
+             android:layout_centerHorizontal="true"
+             android:background="@color/material_grey_100"
+             android:layout_marginLeft="5dp"/>-->
+        <TextView android:text="" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/material_grey_100"
+            android:gravity="center"
+            android:textSize="@dimen/text"
+            android:layout_marginLeft="@dimen/left_margin"/>
+
+
+        <fragment
+            android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+            android:id="@+id/youtube_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/youtube_frag"
+            android:layout_below="@+id/textview"/>
+
+        <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Start Test"-->
+        <!--android:id="@+id/startBtn"-->
+        <!--android:layout_below="@+id/youtube_fragment"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--/>-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Video Streaming Test Result"
+            android:id="@+id/resultHdr"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/separater_height"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="3dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/res"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="3dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Total Video Duration(in sec)"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:id="@+id/vid_dur"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Number Of Buffering"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:id="@+id/buffering_no"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Total Buffering Time(in ms)"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:id="@+id/buffer_time"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="Total Play Time(in sec)"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:id="@+id/playtime"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:hint="Enter your Url or Ip"
+                android:textColorHint="@color/cpb_grey"
+                android:id="@+id/testEt"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Start Test"
+                android:id="@+id/startBtn"
+                android:background="@drawable/btn_bg"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/accent"
+                android:textStyle="bold"
+                android:padding="3dp"
+                android:enabled="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/pingLL">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="TraceRoute Result"
+                android:textSize="18sp"/>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/tableRL">
+
+
+                <com.evrencoskun.tableview.TableView
+                    android:id="@+id/content_container1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+<!--    <ProgressBar-->
+<!--        android:layout_width="@dimen/fourty_dp"-->
+<!--        android:layout_height="@dimen/fourty_dp"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:id="@+id/progressBar"/>-->
+
+</RelativeLayout>

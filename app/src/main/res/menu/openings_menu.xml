@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/window"
+        android:title="Window"
+        android:icon="@mipmap/ic_window"
+        />
+    <item
+        android:id="@+id/door"
+        android:title="Door"
+        android:icon="@mipmap/ic_door"
+       />
+    <item
+        android:id="@+id/staircase"
+        android:title="StairCase"
+        android:icon="@mipmap/ic_staircase"/>
+
+</menu>

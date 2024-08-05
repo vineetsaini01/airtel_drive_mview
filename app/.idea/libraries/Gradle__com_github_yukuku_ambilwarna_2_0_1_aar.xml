@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.yukuku:ambilwarna:2.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2282e9676b61c31af647e62a76996b7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2282e9676b61c31af647e62a76996b7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2282e9676b61c31af647e62a76996b7/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/512b8901a6149b7acc82524306ddf06f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/512b8901a6149b7acc82524306ddf06f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/512b8901a6149b7acc82524306ddf06f/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.yukuku/ambilwarna/2.0.1/83d7f0b798f6cdf00c65e408a097dbd3c22bdd8e/ambilwarna-2.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

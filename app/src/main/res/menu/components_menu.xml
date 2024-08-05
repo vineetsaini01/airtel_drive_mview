@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/wifiItem"
+        android:title="Wi-Fi"
+        android:icon="@drawable/wifi"
+        />
+
+</menu>

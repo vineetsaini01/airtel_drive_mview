@@ -1,0 +1,18 @@
+/*dependencyResolutionManagement{
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories{
+        google()
+        mavenCentral()
+        jcenter()
+        maven {url "https://atlas.microsoft.com/sdk/android"}
+    }
+}*/
+include ':tableviewlibrary'
+include ':tableview'
+include ':tableview_lib'
+include ':tableview'
+include ':menu_library'
+include ':HeatMapHelper'
+include ':HeatMapLib'
+include ':app', ':dialoglib'
+

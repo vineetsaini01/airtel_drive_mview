@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+    <variable
+        name="viewModel"
+        type="com.newmview.wifi.bean.WifiModel" />
+        <variable
+            name="clickListener"
+            type="com.newmview.wifi.activity.WifiActivity.CustomClickListener" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_black_percent_15"
+    android:backgroundTint="@color/transparent_black_percent_15"
+    android:scrollbarSize="@dimen/five_dp"
+    android:scrollbarStyle="outsideOverlay">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:backgroundTint="@color/transparent_black_percent_15"
+    android:background="@color/transparent_black_percent_15">
+<!--
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+        <ProgressBar
+            android:id="@+id/toolbar_progress_bar"
+            android:layout_width="@dimen/thirtydp"
+            android:layout_height="@dimen/thirtydp"
+            android:indeterminateTint="#795548"
+            android:indeterminateTintMode="src_in"
+            android:layout_gravity="right"
+            android:layout_marginEnd="@dimen/ten_dp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+-->
+   <!-- <include layout="@layout/app_bar_main"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/toolBarMain"/>-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_margin="@dimen/twenty_dp"
+        app:cardCornerRadius="@dimen/twenty_dp"
+        android:background="@color/app_theme"
+        android:id="@+id/connectedWifiCv">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/connectedWifiLL"
+        android:orientation="vertical"
+        android:gravity="center|top"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Connected Wifi"
+            android:layout_marginTop="@dimen/five_dp"
+            android:id="@+id/connectedWifiTv"
+           android:typeface="sans"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+
+            android:textSize="@dimen/eighteen_sp"
+            android:ellipsize="end"
+            android:layout_marginBottom="@dimen/five_dp"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center">
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_weight="0.5"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               android:gravity="start"
+
+               android:padding="@dimen/ten_dp">
+        <com.newmview.wifi.customview.HalfGauge
+            android:id="@+id/ssGauge"
+            android:layout_width="@dimen/one_hundred_thirty"
+            android:layout_height="@dimen/one_hundred_thirty"
+
+            android:layout_marginEnd="@dimen/twenty_dp"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Signal Strength(dBm)"
+                   android:textColor="@color/black"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="@dimen/five_dp"/>
+           </LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="0.5"
+    android:orientation="vertical"
+android:padding="@dimen/ten_dp"
+    android:layout_gravity="center"
+    android:gravity="center">
+        <com.newmview.wifi.customview.HalfGauge
+            android:id="@+id/linkSpeed"
+            android:layout_width="@dimen/one_hundred_thirty"
+            android:layout_height="@dimen/one_hundred_thirty"
+            />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Link speed(Mbps)"
+               android:layout_gravity="center"
+
+               android:textColor="@color/black"
+               android:layout_marginTop="@dimen/five_dp"/>
+</LinearLayout>
+       </LinearLayout>
+
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/twenty_dp"
+        android:layout_marginEnd="@dimen/twenty_dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/supports5gTv"
+            android:textColor="@color/app_theme"
+            android:text=""
+            />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_margin="@dimen/twenty_dp"
+        app:cardCornerRadius="@dimen/twenty_dp"
+        android:background="@color/app_theme"
+        android:id="@+id/wifiListCv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NearBy SSIDs"
+                android:fontFamily="@font/product_sans_bold"
+                android:textSize="@dimen/eighteen_sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/five_dp"
+                android:gravity="center"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/two_hundred_dp"
+            android:layout_margin="@dimen/five_dp"
+            android:scrollIndicators="end"
+            android:scrollbarSize="@dimen/five_dp"
+            android:id="@+id/wifiRv"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        android:gravity="top">
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fourty_dp"
+        android:text="Connect Other SSID"
+        android:id="@+id/changeSSIDBtn"
+        android:textColor="@color/white"
+        android:background="@drawable/black_button"
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:textSize="@dimen/tensp"
+        android:layout_weight="0.5"
+        android:layout_marginRight="@dimen/ten_dp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fourty_dp"
+            android:text="Create Floor Plan"
+            android:id="@+id/createButton"
+            android:textSize="@dimen/tensp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_weight="0.5"
+
+            android:onClick="@{() -> clickListener.buttonClicked()}"/>
+
+    </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fourty_dp"
+            android:text="View Saved Maps"
+            android:id="@+id/viewMapsBtn"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:visibility="gone"
+            android:layout_weight="0.3"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+</layout>

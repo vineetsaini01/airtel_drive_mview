@@ -1,0 +1,628 @@
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/connecting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:background="@color/white"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/progress"
+
+                style="@style/MyProgressBar"
+                android:layout_width="200dp"
+
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:elevation="1dp"
+                android:indeterminateDrawable="@drawable/progress"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+
+                android:background="@drawable/circle"
+                android:elevation="1dp"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <com.droidbond.loadingbutton.LoadingButton
+            android:id="@+id/startBtn"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:visibility="gone"
+            app:background="@drawable/circle"
+            app:boldText="true"
+            app:progressBarSize="large"
+            app:progressColor="@color/black"
+
+            app:successBackground="@drawable/ic_bg_blue_buttons_style"
+            app:successIcon="@drawable/ic_done_white_24dp"
+            app:text="START"
+            app:textColor="@color/black"
+            app:textSize="26sp" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightgreytransparent"
+
+        android:visibility="gone"
+
+        android:id="@+id/gauge_layout">
+
+
+
+        <TextView android:text="" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textview"
+            android:textSize="@dimen/textsize_new"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:id="@+id/r1_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/textview"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+           >
+          <!--  <TextView
+                android:id="@+id/my_dnlabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Download Speed"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#87CEFA"
+
+                android:textStyle="bold"
+                />-->
+            <TextView android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentspeed"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:layout_below="@+id/my_dnlabel"/>
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:id="@+id/realTimeGraph"
+                android:layout_height="150dp"
+               >
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+
+            <com.github.anastr.speedviewlib.PointerSpeedometer
+                android:id="@+id/speedView"
+                android:layout_width="@dimen/speedmeter_width"
+                android:layout_height="@dimen/speedmeter_height"
+                android:layout_gravity="center"
+                app:sv_maxSpeed="1000"
+                app:sv_withTremble="false"
+                android:layout_marginTop="8dp"
+
+
+                />
+           <!-- <TextView android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/statustext"
+                android:textSize="13dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/loading"
+                />-->
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/loading"
+                android:layout_width="fill_parent"
+                android:layout_height="6dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:progressTint="@color/colorPrimary"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.droidbond.loadingbutton.LoadingButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:text="START"
+                    app:background="@color/colorAccent"
+                    app:successBackground="@drawable/ic_bg_blue_buttons_style"
+                    app:successIcon="@drawable/ic_done_white_24dp"
+                    app:textSize="16sp"
+                    app:boldText="true"
+                    app:textColor="@color/black"
+                    app:progressColor="@color/black"
+                    app:progressBarSize="small"
+                    android:visibility="gone"
+                    android:id="@+id/startdwnldBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"/>
+
+<!--
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Start"
+                    android:id="@+id/startdwnldBtn"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="true"
+
+
+                    />
+-->
+             <!--   <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Stop"
+                    android:id="@+id/stopdwnldBtn"
+                    android:background="@drawable/btn_bg"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:padding="3dp"
+                    android:layout_marginTop="10dp"
+                    android:enabled="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/startdwnldBtn"
+
+
+                    />-->
+           <!-- <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:id="@+id/startuploadBtn"
+                android:layout_alignEnd="@+id/startdwnldBtn"
+                android:layout_gravity="end"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                />-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/r1_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/startBtn"
+                android:elevation="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                >
+               <!-- <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Test Results"
+                    android:id="@+id/resultHdr"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#2b2b2b"
+                    android:textSize="18sp"
+
+                    />-->
+
+              <!--  <TextView
+                    android:id="@+id/line"
+                    style="?android:attr/listSeparatorTextViewStyle"
+                    android:paddingTop="5dip"
+                    android:paddingBottom="5dip"
+                    android:layout_below="@+id/resultHdr"
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+
+                    />-->
+
+               <!-- <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/result"
+                    android:layout_below="@+id/line"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#2b2b2b"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    />
+-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:layout_weight="1">
+                  <!--  <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Date"
+                        android:textColor="@color/textColor"
+                        android:layout_marginTop="4dp"
+                        android:textSize="@dimen/textsize_new"
+                        android:textStyle="bold"
+                        />-->
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Latency"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize_new"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Packet Loss "
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize_new"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Time Taken"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize_new"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="File Size"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/textsize_new"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Measured Speed"
+                        android:textColor="@color/textColor"
+                        android:layout_marginTop="4dp"
+                        android:textSize="@dimen/textsize_new"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:layout_weight="1"
+                    android:id="@+id/dwnldlayout">
+                   <!-- <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/upload_download"
+                        android:textColor="@color/darkgrey"
+                        android:layout_marginTop="4dp"/>
+ -->                 <TextView
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:id="@+id/pingime"
+                    android:textColor="@color/darkgrey"
+
+                    android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/lossval"
+                        android:textColor="@color/darkgrey"
+
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/dwnldtime"
+                        android:textColor="@color/darkgrey"
+
+                        android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/dwnldsize"
+                        android:textColor="@color/darkgrey"
+                        android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/dwnldspeed"
+                        android:textColor="@color/darkgrey"
+
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:layout_weight="1"
+                    android:id="@+id/uploadlayout"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Upload"
+
+                        android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/uploadtime"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/uploadsize"
+
+                        android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:id="@+id/uploadspeed"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/r1_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:background="#FFEFD5"
+            android:elevation="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/r1_download"
+            android:visibility="gone"
+            >
+            <TextView
+                android:id="@+id/my_uplabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Speed"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="#87CEFA"
+                android:textStyle="bold"
+                />
+            <TextView android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentspeed1"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:layout_below="@+id/my_uplabel"/>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/loading1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_below="@+id/currentspeed1"
+
+                />
+            <TextView android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/statustext1"
+                android:textSize="13dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/loading1"
+                android:gravity="left"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select File"
+                android:id="@+id/selectBtn"
+                android:layout_below="@+id/statustext1"
+                android:layout_centerInParent="true"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:id="@+id/startUploadBtn"
+                android:layout_below="@+id/statustext1"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/selectBtn"
+                />
+
+            <TextView android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sizetext"
+                android:singleLine="false"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_alignBottom="@+id/startUploadBtn"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/statustext1"
+                android:layout_toLeftOf="@+id/selectBtn"/>
+
+            <RelativeLayout
+                android:id="@+id/r1_home1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/startUploadBtn"
+
+                android:background="#ff7aff24"
+                android:elevation="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                >
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Test Results"
+                    android:id="@+id/resultHdr1"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#2b2b2b"
+                    android:textSize="18sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/line1"
+                    style="?android:attr/listSeparatorTextViewStyle"
+                    android:paddingTop="5dip"
+                    android:paddingBottom="5dip"
+                    android:layout_below="@+id/resultHdr1"
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/result1"
+                    android:layout_below="@+id/line1"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#2b2b2b"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    </FrameLayout>
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

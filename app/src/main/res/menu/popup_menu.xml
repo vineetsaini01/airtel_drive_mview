@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bhkOne"
+        android:title="1 BHK" />
+
+    <item
+        android:id="@+id/bhkTwo"
+        android:title="2 BHK" />
+
+    <item
+        android:id="@+id/bhkThree"
+        android:title="3 BHK" />
+
+    <item
+        android:id="@+id/bhkFour"
+        android:title="4 BHK" />
+    <item
+        android:id="@+id/bhkFive"
+        android:title="5 BHK" />
+
+</menu>

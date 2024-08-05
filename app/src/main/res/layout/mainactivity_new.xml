@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/CoordinatorLayout01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:nestedScrollingEnabled="true"
+
+        tools:openDrawer="start">
+
+
+
+        <include
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            android:nestedScrollingEnabled="true"
+            app:headerLayout="@layout/nav_header_main"
+            android:background="@color/white"
+
+            >
+        <!-- app:menu="@menu/activity_main_drawer"-->
+        <ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_header_height"
+            android:background="@android:color/white"
+            android:dividerHeight="0dp"
+            android:groupIndicator="@null"
+
+            android:id="@+id/expanded_menu"/>
+        </com.google.android.material.navigation.NavigationView>
+        <!--  app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+
+
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+ <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:nestedScrollingEnabled="true"
+
+        android:visibility="visible"
+        app:menu="@menu/bottom_menu"
+        app:itemTextColor="@drawable/navbar_color"
+        app:itemIconTint="@drawable/navbar_color"
+        android:background="@color/primary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
