@@ -102,6 +102,7 @@ import com.newmview.wifi.other.Config;
 import com.newmview.wifi.other.Constants;
 import com.newmview.wifi.other.Utils;
 import com.services.MyJobService;
+import com.visionairtel.drivetest.activity.HomeActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -448,6 +449,7 @@ import static com.newmview.wifi.application.MviewApplication.timeStamp;
             reportList.add("Manually Send evt");
 
             reportList.add("Manually Start All the Tests");
+            reportList.add("Drive Test");
 
             System.out.println("Common util mapped list size "+CommonUtil.mappgraphlist.size());
             System.out.println("graphs mapped list "+mappedgraphList);
@@ -2119,6 +2121,10 @@ dialog.dismiss();
                 case 14:
                     /* intent.putExtra("chartName",chartName);*/
                     new DialogPopup("Manually Start All the Tests").startTestManually(this);
+                    break;
+                case 15:
+                    Intent driveTestIntent = new Intent(this, HomeActivity.class);
+                    startActivity(driveTestIntent);
                     break;
             }
         }

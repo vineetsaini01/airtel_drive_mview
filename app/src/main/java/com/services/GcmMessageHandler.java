@@ -246,8 +246,8 @@ if(result!=null) {
                           .setLargeIcon(result)
                         .setContentTitle(Html.fromHtml("mView"))
                         .setChannelId(CHANNEL_ID)
-                       .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(result).bigLargeIcon(null)).
-                        setContentIntent(contentIntent).
+                      // .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(result).bigLargeIcon(null)).
+                        .setContentIntent(contentIntent).
                         setPriority(Notification.PRIORITY_HIGH);
 
 

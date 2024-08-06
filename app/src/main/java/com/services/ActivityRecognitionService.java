@@ -10,7 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.exoplayer2.util.Util;
+import com.google.android.gms.common.api.Api;
+import com.google.android.gms.common.api.internal.ApiKey;
 import com.google.android.gms.location.ActivityRecognitionClient;
+import com.google.android.gms.location.ActivityTransitionRequest;
+import com.google.android.gms.location.SleepSegmentRequest;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -40,7 +44,49 @@ public class ActivityRecognitionService extends Service {
         super.onCreate();
       //  Utils.showToast(this,"Start service");
         // by swapnil bansal 26/12/2022
-        mActivityRecognitionClient = new ActivityRecognitionClient(this);
+        mActivityRecognitionClient = new ActivityRecognitionClient() {
+            @NonNull
+            @Override
+            public ApiKey<Api.ApiOptions.NoOptions> getApiKey() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> requestActivityUpdates(long l, @NonNull PendingIntent pendingIntent) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> removeActivityUpdates(@NonNull PendingIntent pendingIntent) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> requestActivityTransitionUpdates(@NonNull ActivityTransitionRequest activityTransitionRequest, @NonNull PendingIntent pendingIntent) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> removeActivityTransitionUpdates(@NonNull PendingIntent pendingIntent) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> requestSleepSegmentUpdates(@NonNull PendingIntent pendingIntent, @NonNull SleepSegmentRequest sleepSegmentRequest) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            public Task<Void> removeSleepSegmentUpdates(@NonNull PendingIntent pendingIntent) {
+                return null;
+            }
+        };
         mIntentService = new Intent(this, DetectedActivitiesIntentService.class);
         int pendingFlags;
         if (Util.SDK_INT >= 23) {
