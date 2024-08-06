@@ -13,6 +13,7 @@
 
 
 
+
     <application
         android:name=".di.BaseApplication"
         android:allowBackup="true"
