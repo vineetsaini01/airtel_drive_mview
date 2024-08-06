@@ -229,8 +229,8 @@ public class NumberValidationActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //getSupportActionBar().hide();
         sentsubid = new ArrayList<>();
         simCardList = new ArrayList<Integer>();
 

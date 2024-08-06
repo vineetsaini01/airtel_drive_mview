@@ -48,6 +48,9 @@ import java.util.ArrayList;
 
 import static com.newmview.wifi.helper.CommonUtil.headersList;
 
+import dagger.hilt.android.HiltAndroidApp;
+
+@HiltAndroidApp
 public class MviewApplication extends MultiDexApplication implements Configuration.Provider{
     public static Context ctx;
     private SimpleCache downloadCache;
