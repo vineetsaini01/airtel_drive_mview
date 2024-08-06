@@ -404,7 +404,6 @@ alertVisible=false;
         wifiBinding.setClickListener(new CustomClickListener() {
             @Override
             public void buttonClicked() {
-                Utils.takeToNextActivity(WifiActivity.this,CanvasActivity.class,null);
             }
         });
         wifiBinding.changeSSIDBtn.setOnClickListener(this);

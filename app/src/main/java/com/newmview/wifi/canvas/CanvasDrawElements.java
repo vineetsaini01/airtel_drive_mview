@@ -35,7 +35,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.mview.airtel.R;
-import com.newmview.wifi.activity.CanvasActivity;
 import com.newmview.wifi.helper.CoordsBuilder;
 
 import java.io.ByteArrayOutputStream;
@@ -592,10 +591,7 @@ Log.i(TAG,"Drawing "+text +" at "+textX+","+y);
 */
 					Log.i(TAG,"Height "+height +" width "+width +" startx  "+startX +" starty "+startY +" x "
 					+x +" Y "+y);
-					if(context instanceof CanvasActivity)
-					{
-						((CanvasActivity)context).sendHW(height,width);
-					}
+					
 
 					break;
 

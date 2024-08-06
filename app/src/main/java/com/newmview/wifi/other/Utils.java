@@ -100,12 +100,10 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 import com.jcraft.jsch.SftpProgressMonitor;
-import com.mview.airtel.BuildConfig;
 import com.newmview.wifi.CapturedPhoneState;
 import com.newmview.wifi.MyPhoneStateListener;
 import com.newmview.wifi.MySpeedTest;
 import com.mview.airtel.R;
-import com.newmview.wifi.activity.CanvasActivity;
 import com.newmview.wifi.activity.MainActivity;
 import com.newmview.wifi.activity.CreateWalkMapActivity;
 import com.newmview.wifi.application.MviewApplication;
@@ -1202,17 +1200,7 @@ public class Utils {
                 .setNegativeButton(negativeText, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(context instanceof CanvasActivity) {
-                            if (!TextUtils.isEmpty(negativeText)) {
-                                if (negativeText.equalsIgnoreCase("Create Heatmap")) {
-                                    Intent intent = new Intent(context, CreateWalkMapActivity.class);
-                                    intent.putExtra("floorMapPath", filepath);
-                                    context.startActivity(intent);
-                                } else {
-                                    dialog.dismiss();
-                                }
-                            }
-                        }
+
 
 
                     }
@@ -2493,9 +2481,9 @@ public class Utils {
             intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
            /* FileProvider.getUriForFile(Objects.requireNonNull(MviewApplication.ctx),
                     BuildConfig.APPLICATION_ID + ".provider", new File(filepath));*/
-            intent.putExtra(Intent.EXTRA_STREAM,
-                    FileProvider.getUriForFile(Objects.requireNonNull(MviewApplication.ctx),
-                            BuildConfig.APPLICATION_ID + ".provider", new File(filepath)));
+//            intent.putExtra(Intent.EXTRA_STREAM,
+//                    FileProvider.getUriForFile(Objects.requireNonNull(MviewApplication.ctx),
+//                            BuildConfig.APPLICATION_ID + ".provider", new File(filepath)));
             //intent.putExtra(Intent.EXTRA_STREAM, finalUri);
             if(Utils.checkifavailable(textToShare))
                 intent.putExtra(Intent.EXTRA_TEXT,textToShare);

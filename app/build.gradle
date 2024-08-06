@@ -3,7 +3,7 @@ plugins{
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    //id("kotlin-kapt")
 }
 
 android {
@@ -46,43 +46,37 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation files('libs/mview_sdk.aar')
-    implementation project(path: ':HeatMapLib')
-    implementation project(path: ':menu_library')
     implementation project(path: ':tableviewlibrary')
-    compile files('src/main/assets/Raw/Ping.aar')
-    compile files('src/main/assets/Raw/MtantuTasks.aar')
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'androidx.constraintlayout:constraintlayout:1.1.3'
-    androidTestCompile('androidx.test.espresso:espresso-core:3.1.0', {
+    androidTestImplementation ('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     // by swapnil bansal changed version of below 2 to solve bugs  10/06/2022
-    compile 'com.google.android.material:material:1.4.0'
-    compile 'androidx.appcompat:appcompat:1.3.1'
-    compile 'androidx.legacy:legacy-support-v4:1.0.0'
-    compile 'commons-net:commons-net:3.3'
-    compile 'commons-io:commons-io:2.4'
-    compile 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'commons-net:commons-net:3.3'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
-    compile files('libs/YouTubeAndroidPlayerApi.jar')
-    compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
-    compile 'com.google.code.gson:gson:2.4'
-    testCompile 'junit:junit:4.12'
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.1.6'
+    implementation 'com.google.code.gson:gson:2.4'
+    testImplementation 'junit:junit:4.12'
 
-    compile 'com.github.anastr:speedviewlib:1.3.0'
-    compile 'androidx.cardview:cardview:1.0.0'
-    compile 'com.squareup:android-times-square:1.5.0@aar'
+    implementation 'com.github.anastr:speedviewlib:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.squareup:android-times-square:1.5.0@aar'
     implementation 'com.google.maps.android:android-maps-utils:0.5+'
     implementation 'com.github.pengrad:mapscaleview:1.4.2'
     implementation 'com.whiteelephant:monthandyearpicker:1.3.0'
-    compile 'com.jcraft:jsch:0.1.54'
-    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
+    implementation 'com.jcraft:jsch:0.1.54'
+    implementation 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'
     implementation 'com.github.islamdidarmd:LoadingButton:0.1.7'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
-    compile project(path: ':dialoglib')
+    implementation project(path: ':dialoglib')
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.google.android.exoplayer:exoplayer:2.10.3'
-    compile 'com.github.aykuttasil:CallRecorder:1.5.3'
+    implementation 'com.github.aykuttasil:CallRecorder:1.5.3'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.yukuku:ambilwarna:2.0.1'
@@ -115,7 +109,7 @@ dependencies {
 
 //
 //    implementation 'androidx.room:room-runtime:2.6.1'
-//    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+//    annotationProcessor 'androidx.room:room-implementationr:2.6.1'
 
 
     //implementation 'com.google.firebase:firebase-crashlytics'

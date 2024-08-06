@@ -1,497 +1,475 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="viewModel"
             type="com.newmview.wifi.bean.WifiModel" />
     </data>
+
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/mainFrame"
-        android:background="@color/white">
-    <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
-
-        <LinearLayout
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/saveLL"
-            android:orientation="vertical"
+            android:background="@color/white"
+            android:orientation="vertical">
 
 
-            >
             <LinearLayout
+                android:id="@+id/saveLL"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.9"
-                android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/seventy_dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
 
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/app_theme"
-                    android:background="@color/white"
-                    android:layout_marginBottom="@dimen/two_dp"
-                    android:visibility="gone"
-                    android:textSize="@dimen/tensp"
-
-                    android:text="You can walk around your area and tap on the floor map to take readings."/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/five_dp"
-                    android:visibility="gone"
-                    android:id="@+id/wifiDetailsTv"
-                    android:textColor="@color/black"/>
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:stretchColumns="*"
-
-                    android:id="@+id/mapTable">
-                    <TableRow
-                        android:layout_margin="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/tablerow"
-                        >
-
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/tensp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="Survey Id:"
-
-                            android:textAllCaps="false"
-                            >
-                        </TextView>
-                        <TextView
-                            android:id="@+id/surveyIdTv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/tensp"
-                            android:maxLines="1"
-                            android:ellipsize="end"
-                            android:textColor="@color/darkgrey"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-
-                            >
-                        </TextView>
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/tensp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="User Id:"
-                            android:textAllCaps="false"
-                            >
-                        </TextView>
-                        <TextView
-                            android:id="@+id/userIdv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textSize="@dimen/tensp"
-                            android:ellipsize="end"
-                            android:textColor="@color/darkgrey"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:maxLines="1"
-                            >
-                        </TextView>
-                    </TableRow>
-
-
-
-
-                    <TableRow
-                        android:layout_margin="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        >
-
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="SSID:"
-                            android:textAllCaps="false"
-                            android:textSize="@dimen/tensp"
-                            >
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/ssidTv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:textColor="@color/darkgrey"
-                            android:textSize="@dimen/tensp"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            >
-                        </TextView>
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="TimeStamp:"
-
-                            android:textAllCaps="false"
-                            android:textSize="@dimen/tensp"
-                            >
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/timeStampTv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/darkgrey"
-                            android:textSize="@dimen/tensp"
-                            android:ellipsize="end"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:maxLines="1"
-                            >
-                        </TextView>
-
-                    </TableRow>
-
-
-
-
-
-                    <TableRow
-                        android:layout_margin="2dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        >
-
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="Signal Strength:"
-                            android:textAllCaps="false"
-                            android:textSize="@dimen/tensp"
-                            >
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/ssTv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:ellipsize="end"
-                            android:maxLines="1"
-                            android:textSize="@dimen/tensp"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            >
-                        </TextView>
-                        <TextView
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/textColor"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:text="Link Speed:"
-                            android:textAllCaps="false"
-                            android:textSize="@dimen/tensp"
-                            >
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/linkSpeedTv"
-                            android:layout_weight="0.25"
-                            android:layout_width="0dp"
-                            android:textColor="@color/darkgrey"
-                            android:textSize="@dimen/tensp"
-                            android:ellipsize="end"
-                            android:layout_marginLeft="@dimen/column_leftmargin"
-                            android:maxLines="1"
-                            >
-                        </TextView>
-
-                    </TableRow>
-
-
-
-
-
-
-                </TableLayout>
-            </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-android:layout_marginStart="@dimen/ten_dp"
-                    android:visibility="gone"
-                    android:id="@+id/distanceTv"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.9"
 
                 >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="L"
-                    android:gravity="center"
-                    android:textSize="12sp"
-                   android:layout_gravity="center"
-                    android:layout_marginStart="5dp"
-
-                    />
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.85"
-                android:background="@color/white"
-                android:layout_marginTop="-1dp"
-               >
-<!--
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/thirtydp"
-                    android:gravity="center">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/line_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="@dimen/ten_dp"
-                    android:elevation="4dp"
-                    android:background="@mipmap/ic_line_icon_foreground"/>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/compassIv"
-                    android:layout_width="@dimen/eighty_dp"
-                    android:layout_height="@dimen/eighty_dp"
-                    android:elevation="4dp"
-                    android:src="@mipmap/ic_compass_icon_foreground"/>
-                </LinearLayout>
--->
-
-                <com.newmview.wifi.customview.SingleTouchEventView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/displayIv"
-                    android:visibility="visible"
-
-                    android:background="@color/white"
-                    />
-
-<!--
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/line_view"
-                    android:layout_width="@dimen/thirtydp"
-                    android:layout_height="@dimen/sixty_dp"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginBottom="-35dp"
-                    android:elevation="4dp"
-                    android:src="@mipmap/ic_line_icon_foreground"
-                  />
--->
-
-                <TextView
-                    android:id="@+id/line_view"
-                    android:layout_width="@dimen/five_dp"
-                    android:layout_height="@dimen/five_dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginBottom="-1dp"
-                    android:background="@color/red"
-                    android:elevation="4dp"
-                    android:layout_marginTop="@dimen/fifteen_dp"
-
-                    />
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/compassIv"
-                    android:layout_width="45dp"
-                    android:layout_height="35dp"
-                    android:layout_below="@+id/line_view"
-                    android:layout_marginStart="@dimen/five_dp"
-                    android:layout_marginTop="@dimen/ten_dp"
-                    android:elevation="4dp"
-                    android:src="@mipmap/ic_north_compass_icon_foreground" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/fifteen_dp"
-                    android:layout_below="@+id/compassIv"
-                    android:layout_marginTop="@dimen/two_dp"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/twelve_sp"
-                    android:id="@+id/directionTv"/>
-
-                <ca.hss.heatmaplib.HeatMap
-                    android:id="@+id/heatmap"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:minOpacity="0"
-                    android:visibility="gone"
-                    app:maxOpacity="255" />
-            </RelativeLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="R"
-                    android:gravity="center"
-                    android:textSize="12sp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="@dimen/five_dp"
-                    />
-
-            </LinearLayout>
-            </LinearLayout>
-<include layout="@layout/legendslayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:visibility="gone"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/app_theme"
-                android:background="@color/white"
-                android:layout_margin="@dimen/five_dp"
-android:visibility="gone"
-                android:text="You can save your heatmap in your phone gallery for further analyis."/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:orientation="horizontal"
-                android:layout_gravity="bottom"
-                android:gravity="bottom">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="0.9"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    android:orientation="vertical">
 
-
-                    >
-                    <Button
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/fourty_dp"
-                        android:layout_marginLeft="5dp"
-                        android:text="Save"
-                        android:textColor="@color/white"
-                        android:background="@drawable/btn_bg"
-                        android:id="@+id/saveBtn"
-                        android:visibility="gone"
+                        android:layout_height="@dimen/seventy_dp"
 
-                        android:tint="@color/app_theme"
-                        />
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/fourty_dp"
-                        android:layout_marginLeft="5dp"
-                        android:text="Create HeatMap"
-                        android:textColor="@color/white"
-                        android:background="@drawable/btn_bg"
-                        android:id="@+id/viewMapBtn"
+                        android:orientation="vertical">
 
-                        android:tint="@color/app_theme"
-                        />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/two_dp"
+                            android:background="@color/white"
+                            android:text="You can walk around your area and tap on the floor map to take readings."
+                            android:textColor="@color/app_theme"
+                            android:textSize="@dimen/tensp"
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/fourty_dp"
-                        android:layout_marginLeft="5dp"
-                        android:text="Share"
-                        android:textColor="@color/white"
-                        android:background="@drawable/btn_bg"
-                        android:id="@+id/shareBtn"
-                        android:tint="@color/app_theme"
-                        android:visibility="gone"
-                        />
-                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/wifiDetailsTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/five_dp"
+                            android:textColor="@color/black"
+                            android:visibility="gone" />
+
+                        <TableLayout
+                            android:id="@+id/mapTable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:stretchColumns="*">
+
+                            <TableRow
+                                android:id="@+id/tablerow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="Survey Id:"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textColor"
+
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/surveyIdTv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/tensp"
+
+                                    ></TextView>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="User Id:"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/userIdv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/tensp"></TextView>
+                            </TableRow>
+
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="SSID:"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/ssidTv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="TimeStamp:"
+                                    android:textAllCaps="false"
+
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/timeStampTv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                            </TableRow>
+
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="Signal Strength:"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/ssTv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:text="Link Speed:"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/linkSpeedTv"
+                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="@dimen/column_leftmargin"
+                                    android:layout_weight="0.25"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/darkgrey"
+                                    android:textSize="@dimen/tensp"></TextView>
+
+                            </TableRow>
+
+
+                        </TableLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/distanceTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="end"
-                        android:layout_marginStart="@dimen/twenty_dp"
-android:visibility="gone"
-                        android:layout_gravity="end"
-                        android:backgroundTint="@color/app_theme"
-                        app:icon="@drawable/ic_add"
-                        android:id="@+id/moreOptionsBtn"
-                        app:iconTint="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        android:layout_marginStart="@dimen/ten_dp"
+                        android:visibility="gone" />
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="Recoomendations"
-                        android:textColor="@color/white"
-                        android:background="@drawable/btn_bg"
-                        android:id="@+id/recommBtn"
-                        android:visibility="gone"
-                        android:tint="@color/app_theme"
-                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.9"
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="Upload"
-                        android:textColor="@color/app_theme"
-                        android:background="@drawable/button_bckgrnd"
-                        android:id="@+id/uploadBtn"
-                        android:textAllCaps="false"
-                        android:visibility="gone"
-                        android:tint="@color/app_theme"
-                        />
+                        >
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/ic_launcher_foreground"
-                        android:id="@+id/markerIv"
-                        android:visibility="gone"
-                        android:layout_marginStart="20dp"
-                        app:tint="@color/white" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center"
+                            android:text="L"
+                            android:textSize="12sp"
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:visibility="gone"
-                        android:layout_marginLeft="5dp"
-                        android:src="@drawable/ic_launcher_foreground"
-                        android:id="@+id/undoIv"
-                        android:layout_marginStart="20dp"
-                        app:tint="@color/white"/>
+                            />
 
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-1dp"
+                            android:layout_weight="0.85"
+                            android:background="@color/white">
+                            <!--
+                                            <LinearLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:layout_margin="@dimen/thirtydp"
+                                                android:gravity="center">
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/line_view"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="20dp"
+                                                android:layout_marginBottom="10dp"
+                                                android:layout_marginTop="@dimen/ten_dp"
+                                                android:elevation="4dp"
+                                                android:background="@mipmap/ic_line_icon_foreground"/>
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/compassIv"
+                                                android:layout_width="@dimen/eighty_dp"
+                                                android:layout_height="@dimen/eighty_dp"
+                                                android:elevation="4dp"
+                                                android:src="@mipmap/ic_compass_icon_foreground"/>
+                                            </LinearLayout>
+                            -->
+
+                            <com.newmview.wifi.customview.SingleTouchEventView
+                                android:id="@+id/displayIv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+
+                                android:visibility="visible" />
+
+                            <!--
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/line_view"
+                                                android:layout_width="@dimen/thirtydp"
+                                                android:layout_height="@dimen/sixty_dp"
+                                                android:layout_marginStart="13dp"
+                                                android:layout_marginBottom="-35dp"
+                                                android:elevation="4dp"
+                                                android:src="@mipmap/ic_line_icon_foreground"
+                                              />
+                            -->
+
+                            <TextView
+                                android:id="@+id/line_view"
+                                android:layout_width="@dimen/five_dp"
+                                android:layout_height="@dimen/five_dp"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginTop="@dimen/fifteen_dp"
+                                android:layout_marginBottom="-1dp"
+                                android:background="@color/red"
+                                android:elevation="4dp"
+
+                                />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/compassIv"
+                                android:layout_width="45dp"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/line_view"
+                                android:layout_marginStart="@dimen/five_dp"
+                                android:layout_marginTop="@dimen/ten_dp"
+                                android:elevation="4dp"
+                                android:src="@mipmap/ic_north_compass_icon_foreground" />
+
+                            <TextView
+                                android:id="@+id/directionTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/compassIv"
+                                android:layout_marginStart="@dimen/fifteen_dp"
+                                android:layout_marginTop="@dimen/two_dp"
+                                android:textSize="@dimen/twelve_sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/five_dp"
+                            android:gravity="center"
+                            android:text="R"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
+                <include
+                    layout="@layout/legendslayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five_dp"
+                    android:background="@color/white"
+                    android:text="You can save your heatmap in your phone gallery for further analyis."
+                    android:textColor="@color/app_theme"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.9"
+                        android:gravity="center"
+
+
+                        >
+
+                        <Button
+                            android:id="@+id/saveBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/fourty_dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_bg"
+                            android:text="Save"
+                            android:textColor="@color/white"
+                            android:tint="@color/app_theme"
+
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/viewMapBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/fourty_dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_bg"
+                            android:text="Create HeatMap"
+                            android:textColor="@color/white"
+
+                            android:tint="@color/app_theme" />
+
+                        <Button
+                            android:id="@+id/shareBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/fourty_dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_bg"
+                            android:text="Share"
+                            android:textColor="@color/white"
+                            android:tint="@color/app_theme"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                            android:id="@+id/moreOptionsBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="@dimen/twenty_dp"
+                            android:backgroundTint="@color/app_theme"
+                            android:gravity="end"
+                            android:visibility="gone"
+                            app:icon="@drawable/ic_add"
+                            app:iconTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <Button
+                            android:id="@+id/recommBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/btn_bg"
+                            android:text="Recoomendations"
+                            android:textColor="@color/white"
+                            android:tint="@color/app_theme"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/uploadBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/button_bckgrnd"
+                            android:text="Upload"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_theme"
+                            android:tint="@color/app_theme"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/markerIv"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_launcher_round"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/undoIv"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_launcher_round"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-        <!--</RelativeLayout>-->
-    </LinearLayout>
+            <!--</RelativeLayout>-->
+        </LinearLayout>
     </FrameLayout>
 </layout>
