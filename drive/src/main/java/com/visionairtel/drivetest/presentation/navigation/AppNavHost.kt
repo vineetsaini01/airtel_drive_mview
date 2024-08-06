@@ -16,7 +16,7 @@ fun AppNavHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = AppRoute.DriveTestScreen.route,
+        startDestination = AppRoute.HomeScreen.route,
     ) {
 
         composable(AppRoute.MainScreen.route) {
