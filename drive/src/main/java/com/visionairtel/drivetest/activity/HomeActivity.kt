@@ -10,29 +10,25 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.visionairtel.drivetest.presentation.navigation.AppNavHost
 import com.visionairtel.drivetest.presentation.navigation.AppNavigator
+import com.visionairtel.drivetest.presentation.screen.drive_test.DriveTestScreen
 import com.visionairtel.drivetest.presentation.theme.AirtelDriveTestTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class HomeActivity : ComponentActivity() {
     @Inject
-    lateinit var appNavigator: AppNavigator
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val navController = rememberNavController().apply {
-                setLifecycleOwner(this@MainActivity)
-            }
-            appNavigator.setNavController { navController }
 
             AirtelDriveTestTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    AppNavHost(navController = navController)
+                    DriveTestScreen()
                 }
             }
         }
