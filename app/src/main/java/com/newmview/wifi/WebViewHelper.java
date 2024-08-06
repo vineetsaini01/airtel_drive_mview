@@ -71,7 +71,7 @@ public class WebViewHelper {
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON_DEMAND);
-        webView.getSettings().setAppCacheEnabled(false);
+        ///webView.getSettings().setAppCacheEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setLightTouchEnabled(true);
