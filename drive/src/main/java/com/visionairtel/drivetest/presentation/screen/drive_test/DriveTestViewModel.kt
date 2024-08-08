@@ -1,6 +1,7 @@
 package com.visionairtel.drivetest.presentation.screen.drive_test
 
 import android.annotation.SuppressLint
+import android.location.Location
 import android.os.Build
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,7 +43,6 @@ class DriveTestViewModel @Inject constructor(
     private var startRoute = false
     private var networkDataList = emptyList<NetworkDataItems>()
 
-
     /** UI State */
     var isLoading by mutableStateOf(true)
         private set
@@ -62,10 +62,8 @@ class DriveTestViewModel @Inject constructor(
         CameraPositionState(CameraPosition.fromLatLngZoom(initLocation, 15f))
     )
         private set
-
-    var networkData by mutableStateOf<String?>(null)
+    var networkData by mutableStateOf<NetworkDataItems?>(null)
         private set
-
     var isShowNavigateMarkers by mutableStateOf(true)
         private set
 
@@ -77,38 +75,55 @@ class DriveTestViewModel @Inject constructor(
                     stopRouting()
                 }
                 DriveSaveButton -> {
-                    if (networkDataList.isNotEmpty()) {
-                        DriveUiEvent.Alert(
-                            title = "DATA ALERT",
-                            msg = "Do you want to save data?",
-                            onOkClicked = {
-                                viewModelScope.launch(Dispatchers.IO) {
-                                    val status = saveCsvFileUseCase(networkDataList)
-                                    if (status) {
-                                        DriveUiEvent.ShowMsg("Data is Saved").triggerEvent()
-                                        stopRouting()
-                                    }
+                    if (networkDataList.isEmpty()) return
+                    DriveUiEvent.Alert(title = "DATA ALERT",
+                        msg = "Do you want to save data?",
+                        onOkClicked = {
+                            viewModelScope.launch(Dispatchers.IO) {
+                                val status = saveCsvFileUseCase(networkDataList)
+                                if (status) {
+                                    DriveUiEvent.ShowMsg("Data is Saved").triggerEvent()
+                                    stopRouting()
                                 }
-                            },
-                            onNoClicked = {}
-                        ).triggerEvent()
-                    }
+                            }
+                        },
+                        onNoClicked = {}).triggerEvent()
                 }
                 DriveStartButton -> {
-                    DriveUiEvent.ShowMsg(if (startRoute) "Stop Route" else "Start Route")
-                        .triggerEvent()
-                    if (startRoute) stopRouting() else {
+                    if (!startRoute) {
                         startRoute = true
                         startButtonText = "STOP"
+                        DriveUiEvent.ShowMsg("Start Route").triggerEvent()
+                        return
                     }
+                    DriveUiEvent.Alert(title = "DATA ALERT",
+                        msg = "Do you want to save data?",
+                        onOkClicked = {
+                            viewModelScope.launch(Dispatchers.IO) {
+                                val status = saveCsvFileUseCase(networkDataList)
+                                if (status) {
+                                    DriveUiEvent.ShowMsg("Data is saved and route is stop")
+                                        .triggerEvent()
+                                    stopRouting()
+                                }
+                            }
+                        },
+                        onNoClicked = {
+                            stopRouting()
+                        }).triggerEvent()
                 }
-                is OnPressedMyLocationButton -> {
+
+                is OnPressedMarkerButton -> {
                     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return
                     viewModelScope.launch(Dispatchers.IO) {
-                        val latLng = LatLng(location.latitude, location.longitude)
-                        networkData = getNetworkDataUseCase(latLng).toReadableString()
+                        networkData = networkDataList[position]
+                        isShowNavigateMarkers = false
                         delay(8000L)
-                        if (networkData != null) networkData = null
+                        if (networkData != null) {
+                            networkData = null
+                            isShowNavigateMarkers = true
+                        }
+
                     }
                 }
                 OnPressedNetworkInfoCard -> {
@@ -121,56 +136,71 @@ class DriveTestViewModel @Inject constructor(
         }
     }
 
-    fun updatePermissionGranted(isPermissionGranted: Boolean) {
-        this.isPermissionGranted = isPermissionGranted
-        if (!isPermissionGranted) return
-        startUpdateLocation()
-    }
-
     private fun updateCameraPositionState(latLng: LatLng) {
         cameraPositionState = CameraPositionState(
             position = CameraPosition.fromLatLngZoom(
-                latLng,
-                cameraPositionState.position.zoom
+                latLng, cameraPositionState.position.zoom
             )
         )
     }
 
-    @SuppressLint("NewApi")
+    fun updatePermissionGranted(isPermissionGranted: Boolean) {
+        this.isPermissionGranted = isPermissionGranted
+        if (!isPermissionGranted) return
+        startUpdateLocation()
+        startUpdateNetworkData()
+    }
+
     private fun startUpdateLocation() {
         viewModelScope.launch(Dispatchers.IO) {
             getCurrentLocationUseCase().onEach {
-                val newLatLng = LatLng(it.latitude, it.longitude)
-                if (currentLocation == null) {
-                    updateCameraPositionState(newLatLng)
-                    isLoading = false
-                }
-                if (currentLocation != newLatLng) {
-                    currentLocation = newLatLng
-                    if (startRoute) {
-                        routes = routes + newLatLng
-                        updateCameraPositionState(newLatLng)
-                    }
-                }
+                onReceiverData(location = it)
             }.launchIn(viewModelScope)
         }
+    }
 
-
+    @SuppressLint("NewApi")
+    private fun startUpdateNetworkData() {
         viewModelScope.launch(Dispatchers.IO) {
-            repeat(100000) {
+            while (true) {
                 delay(5000L)
+                if (!startRoute) continue
+                onReceiverData(networkData = getNetworkDataUseCase(currentLocation))
+            }
+        }
+    }
+
+    private fun onReceiverData(
+        location: Location? = null,
+        networkData: NetworkDataItems? = null,
+    ) {
+        if (location == null && networkData == null) return
+
+        location?.let {
+            val latLng = LatLng(it.latitude, it.longitude)
+            if (currentLocation == null) {
+                updateCameraPositionState(latLng)
+                isLoading = false
+            }
+            if (currentLocation != latLng) {
+                currentLocation = latLng
                 if (startRoute) {
-                    val networkData = getNetworkDataUseCase(currentLocation!!)
-                    val newMarker = MarkerItems(
-                        networkType = networkData.networkTypeEnum.title,
-                        latLng = networkData.latLong,
-                        icon = getMarkerIconUseCase(networkData.networkTypeEnum)
-                    )
-                    markers = markers + newMarker
-                    networkDataList = networkDataList + networkData
-                    showLog(tag, "size of networkDataList--->${networkDataList.size}")
+                    routes = routes + latLng
+                    updateCameraPositionState(latLng)
                 }
             }
+        }
+        networkData?.let {
+            if (!startRoute) return
+            networkDataList = networkDataList + it
+            val newMarker = MarkerItems(
+                networkType = it.networkTypeEnum.title,
+                latLng = it.latLong,
+                icon = getMarkerIconUseCase(it.networkTypeEnum)
+            )
+            markers = markers + newMarker
+            showLog(tag, "size of networkDataList--->${networkDataList.size}")
+            showLog(tag, "networkDataList data --->${it}")
         }
     }
 

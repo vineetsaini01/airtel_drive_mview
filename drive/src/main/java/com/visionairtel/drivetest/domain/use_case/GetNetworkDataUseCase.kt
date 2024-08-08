@@ -12,6 +12,8 @@ import com.visionairtel.drivetest.presentation.screen.drive_test.DriveTestContra
 import com.visionairtel.drivetest.presentation.screen.drive_test.DriveTestContract.*
 import com.visionairtel.drivetest.util.Util
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
@@ -24,102 +26,105 @@ class GetNetworkDataUseCase @Inject constructor(@ApplicationContext private val 
 
     @RequiresApi(Build.VERSION_CODES.P)
     @SuppressLint("MissingPermission")
-    suspend operator fun invoke(latLng: LatLng): NetworkDataItems {
+    suspend operator fun invoke(latLng: LatLng?): NetworkDataItems? {
 
-        val data = NetworkDataItems(
-            latLong = latLng,
-            time = getCurrentTime(),
-            shortNetworkType = getShortNetworkType(),
-        )
+        return withContext(Dispatchers.IO) {
+            if (latLng == null) return@withContext null
+            val data = NetworkDataItems(
+                latLong = latLng,
+                time = getCurrentTime(),
+                shortNetworkType = getShortNetworkType(),
+            )
 
-
-        telephonyManager.allCellInfo.forEach { cellInfo ->
-            if (cellInfo.isRegistered) {
-                when (cellInfo) {
-                    // Extract LTE-specific data
-                    is CellInfoLte -> {
-                        data.networkType = "LTE"
-                        data.networkTypeEnum= Util.NetworkTypeEnum.LTE
-                        cellInfo.cellIdentity.apply {
-                            data.mcc = mccString ?: "Unknown"
-                            data.mnc = mncString ?: "Unknown"
-                            data.pci = pci.toString()
-                            data.tac = tac.toString()
-                            data.cellID = ci.toString()
-                            data.earfcn = earfcn.toString()
-                        }
-
-                        cellInfo.cellSignalStrength.apply {
-                            data.cqi = cqi.toString()
-                            data.ta = timingAdvance.toString()
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                                data.rssi = rssi.toString()
+            telephonyManager.allCellInfo.forEach { cellInfo ->
+                if (cellInfo.isRegistered) {
+                    when (cellInfo) {
+                        // Extract LTE-specific data
+                        is CellInfoLte -> {
+                            data.networkType = "LTE"
+                            data.networkTypeEnum = Util.NetworkTypeEnum.LTE
+                            cellInfo.cellIdentity.apply {
+                                data.mcc = mccString ?: "Unknown"
+                                data.mnc = mncString ?: "Unknown"
+                                data.pci = pci.toString()
+                                data.tac = tac.toString()
+                                data.cellID = ci.toString()
+                                data.earfcn = earfcn.toString()
                             }
-                            data.rsrp = rsrp.toString()
-                            data.asu = asuLevel.toString()
-                            data.rssiDbm = dbm.toString()
-                            data.signalQuality = level.toString()
-                            data.rsnnr = rssnr.toString()
-                        }
 
-                    }
-                    // Extract WCDMA-specific data
-                    is CellInfoWcdma -> {
-                        data.networkTypeEnum= Util.NetworkTypeEnum.WCDMA
-                        data.networkType = "WCDMA"
-                        cellInfo.cellIdentity.apply {
-                            data.mcc = mccString ?: "Unknown"
-                            data.mnc = mncString ?: "Unknown"
-                            data.uarfcn = uarfcn.toString()
-                            data.lacId = lac.toString()
-                        }
-                        cellInfo.cellSignalStrength.apply {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                                data.ecNo = ecNo.toString()
+                            cellInfo.cellSignalStrength.apply {
+                                data.cqi = cqi.toString()
+                                data.ta = timingAdvance.toString()
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                                    data.rssi = rssi.toString()
+                                }
+                                data.rsrp = rsrp.toString()
+                                data.asu = asuLevel.toString()
+                                data.rssiDbm = dbm.toString()
+                                data.signalQuality = level.toString()
+                                data.rsnnr = rssnr.toString()
                             }
-                            data.asu = asuLevel.toString()
-                            data.rscp = (asuLevel - 150).toString()
-                            data.rssiDbm = dbm.toString()
-                            data.signalQuality = level.toString()
+
                         }
-                    }
-                    // Extract GSM-specific data
-                    is CellInfoGsm -> {
-                        data.networkTypeEnum= Util.NetworkTypeEnum.GSM
-                        data.networkType = "GSM"
-                        cellInfo.cellIdentity.apply {
-                            data.mcc = mccString ?: "Unknown"
-                            data.mnc = mncString ?: "Unknown"
-                            data.arfcn = arfcn.toString()
-                            data.bsic = bsic.toString()
-                            data.lacId = lac.toString()
-                        }
-                        cellInfo.cellSignalStrength.apply {
-                            data.ta = timingAdvance.toString()
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                                data.rssi = rssi.toString()
+                        // Extract WCDMA-specific data
+                        is CellInfoWcdma -> {
+                            data.networkTypeEnum = Util.NetworkTypeEnum.WCDMA
+                            data.networkType = "WCDMA"
+                            cellInfo.cellIdentity.apply {
+                                data.mcc = mccString ?: "Unknown"
+                                data.mnc = mncString ?: "Unknown"
+                                data.uarfcn = uarfcn.toString()
+                                data.lacId = lac.toString()
                             }
-                            data.ta = timingAdvance.toString()
-                            data.asu = asuLevel.toString()
-                            data.rssiDbm = dbm.toString()
-                            data.signalQuality = level.toString()
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                                data.bitErrorRate = bitErrorRate.toString()
+                            cellInfo.cellSignalStrength.apply {
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                                    data.ecNo = ecNo.toString()
+                                }
+                                data.asu = asuLevel.toString()
+                                data.rscp = (asuLevel - 150).toString()
+                                data.rssiDbm = dbm.toString()
+                                data.signalQuality = level.toString()
                             }
                         }
-                    }
-                    // Extract CDMA-specific data
-                    is CellInfoCdma -> {
-                        cellInfo.cellSignalStrength.apply {
-                            data.networkType = "CDMA"
-                            data.asu = asuLevel.toString()
-                            data.rssiDbm = dbm.toString()
+                        // Extract GSM-specific data
+                        is CellInfoGsm -> {
+                            data.networkTypeEnum = Util.NetworkTypeEnum.GSM
+                            data.networkType = "GSM"
+                            cellInfo.cellIdentity.apply {
+                                data.mcc = mccString ?: "Unknown"
+                                data.mnc = mncString ?: "Unknown"
+                                data.arfcn = arfcn.toString()
+                                data.bsic = bsic.toString()
+                                data.lacId = lac.toString()
+                            }
+                            cellInfo.cellSignalStrength.apply {
+                                data.ta = timingAdvance.toString()
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                                    data.rssi = rssi.toString()
+                                }
+                                data.ta = timingAdvance.toString()
+                                data.asu = asuLevel.toString()
+                                data.rssiDbm = dbm.toString()
+                                data.signalQuality = level.toString()
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                                    data.bitErrorRate = bitErrorRate.toString()
+                                }
+                            }
+                        }
+                        // Extract CDMA-specific data
+                        is CellInfoCdma -> {
+                            cellInfo.cellSignalStrength.apply {
+                                data.networkType = "CDMA"
+                                data.asu = asuLevel.toString()
+                                data.rssiDbm = dbm.toString()
+                            }
                         }
                     }
                 }
             }
+            data
         }
-        return data
+
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

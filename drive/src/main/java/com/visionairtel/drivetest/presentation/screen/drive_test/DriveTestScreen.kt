@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.maps.android.compose.*
 import com.visionairtel.drivetest.R
+import com.visionairtel.drivetest.domain.modal.NetworkDataItems
 import com.visionairtel.drivetest.presentation.component.*
 import com.visionairtel.drivetest.presentation.screen.drive_test.DriveTestContract.Companion.tag
 import com.visionairtel.drivetest.presentation.screen.drive_test.DriveTestContract.DriveEvent.*
@@ -30,9 +31,10 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
+    val context: Context = LocalContext.current
 
     if (!vm.isPermissionGranted) {
-        CheckPermissions(isGranted = vm::updatePermissionGranted)
+        CheckPermissions(vm::updatePermissionGranted)
         return
     }
     if (vm.isLoading) {
@@ -40,7 +42,6 @@ fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
         return
     }
 
-    val context: Context = LocalContext.current
     LaunchedEffect(vm.uiEvents) {
         vm.uiEvents.collect { event ->
             when (event) {
@@ -50,7 +51,12 @@ fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
                     onPressedPositiveButton = {
                         it.dismiss()
                         event.onOkClicked()
-                    })
+                    },
+                    onPressedNegativeButton = {
+                        it.dismiss()
+                        event.onNoClicked()
+                    }
+                )
             }
         }
     }
@@ -66,19 +72,19 @@ fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
                     cameraPositionState = vm.cameraPositionState,
                     properties = vm.properties,
                     uiSettings = vm.uiSettings,
-                    onMyLocationClick = {
-                        showLog("clickTag", "onMyLocationClick")
-                        vm.event(OnPressedMyLocationButton(it))
-                    },
                 ) {
                     showLog(tag, "GoogleMap refresh")
                     Scoped {
                         showLog(tag, "markers refresh")
-                        vm.markers.forEach { marker ->
+                        repeat(vm.markers.size) { position ->
+                            val marker = vm.markers[position]
                             Marker(
                                 state = MarkerState(position = marker.latLng),
-                                title = "Network type is ${marker.networkType} at ${marker.latLng.latitude}, ${marker.latLng.longitude}",
-                                icon = marker.icon
+                                icon = marker.icon,
+                                onClick = {
+                                    vm.event(OnPressedMarkerButton(position))
+                                    true
+                                }
                             )
                         }
                     }
@@ -139,7 +145,7 @@ fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
                         enter = fadeIn() + expandVertically(),
                         exit = fadeOut() + shrinkVertically()
                     ) {
-                        BlinkingBorderCard(text = vm.networkData) {
+                        BlinkingBorderCard(networkData = vm.networkData) {
                             vm.event(OnPressedNetworkInfoCard)
                         }
                     }
@@ -175,7 +181,7 @@ fun DriveTestScreen(vm: DriveTestViewModel = hiltViewModel()) {
 }
 
 @Composable
-private fun BlinkingBorderCard(text: String?, onClick: () -> Unit) {
+private fun BlinkingBorderCard(networkData: NetworkDataItems?, onClick: () -> Unit) {
     var isRed by remember { mutableStateOf(true) }
 
     val borderColor by animateColorAsState(
@@ -190,16 +196,42 @@ private fun BlinkingBorderCard(text: String?, onClick: () -> Unit) {
         }
     }
 
-    Card(
-        shape = RoundedCornerShape(16.dp),
-        border = BorderStroke(2.dp, borderColor),
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(bottom = 12.dp)
-            .clickable { onClick() }
-    ) {
-        Spacer(modifier = Modifier.height(10.dp))
-        Text(modifier = Modifier.padding(14.dp), text = text ?: "")
-        Spacer(modifier = Modifier.height(10.dp))
+    Scoped {
+        Card(
+            shape = RoundedCornerShape(16.dp),
+            border = BorderStroke(2.dp, borderColor),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 12.dp)
+                .clickable { onClick() }
+        ) {
+            networkData?.let {
+                Column(modifier = Modifier.padding(14.dp)) {
+                    TextKeyValue("Latitude", it.latLong.latitude.toString())
+                    TextKeyValue("Longitude", it.latLong.longitude.toString())
+                    TextKeyValue("Network Type", it.networkType)
+                    TextKeyValue("Signal Quality", it.signalQuality)
+                    TextKeyValue("Cell Id", it.cellID)
+                    TextKeyValue("MCC", it.mcc)
+                    TextKeyValue("MNC", it.mnc)
+                    TextKeyValue("RSSI", it.rssi)
+                    TextKeyValue("RSSI DBM", it.rssiDbm, "Dbm")
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@Composable
+private fun TextKeyValue(
+    key: String,
+    value: String,
+    postString: String = "",
+) {
+    if (value.isNotEmpty()) {
+        Text(text = "$key: $value$postString")
     }
 }

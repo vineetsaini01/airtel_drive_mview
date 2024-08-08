@@ -1,7 +1,5 @@
 package com.visionairtel.drivetest.presentation.screen.drive_test
 
-import android.location.Location
-import com.visionairtel.drivetest.core.BaseViewModel
 import com.visionairtel.drivetest.util.Util.NetworkTypeEnum.*
 
 class DriveTestContract {
@@ -16,7 +14,7 @@ class DriveTestContract {
         object DriveCleanButton : DriveEvent()
         object OnPressedInfoButton : DriveEvent()
         object OnPressedNetworkInfoCard : DriveEvent()
-        data class OnPressedMyLocationButton(val location: Location) : DriveEvent()
+        data class OnPressedMarkerButton(val position: Int) : DriveEvent()
     }
 
     sealed class DriveUiEvent {

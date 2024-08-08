@@ -423,7 +423,7 @@ import static com.newmview.wifi.application.MviewApplication.timeStamp;
       //      reportList.add("Call Issue");
          //   reportList.add("Call Test");
             reportList.add("Ping Test");
-            reportList.add("Trace Route Test ");
+            //reportList.add("Trace Route Test ");
 //            reportList.add(Config.wifiMapperName);
 //            reportList.add("Surveys List");
             reportList.add("Sim PARAMS");
@@ -432,19 +432,19 @@ import static com.newmview.wifi.application.MviewApplication.timeStamp;
             reportList.add("Checking sim 1 and 2");
 //            reportList.add("Download Test");
 //            reportList.add("Upload Test");
-            reportList.add("New Call Test");
+            reportList.add("Call Test");
 //            reportList.add("New Network Parameters ");
-            reportList.add("New Web Test");
+            reportList.add("Web Test");
 //            reportList.add("New Video Test");
 //            reportList.add("Performance Test");
             reportList.add("USSD Test");
-            reportList.add("New Video Test(Iframe)");
-            reportList.add("Speed Test(client_socket)");
-            reportList.add("Send SMS");
+            reportList.add("Video Test");
+            reportList.add("Speed Test");
+            reportList.add("SMS Test");
 //            reportList.add("Speed Test(sftp)");
 
-            reportList.add("FAST NET");
-            reportList.add("App Open");
+           // reportList.add("FAST NET");
+           // reportList.add("App Open");
             reportList.add("Manually Status Change");
             reportList.add("Manually Send evt");
 
@@ -2009,10 +2009,6 @@ dialog.dismiss();
                     }
 
                     break;
-                    case 1:
-                    loadFragment(R.string.traceroute, new TraceroutFragment());
-                    Config.onbackpress = "home";
-                    break;
 //                case 2:
 //                    Bundle bundle=new Bundle();
 //                    bundle.putString("flowType","rapid");
@@ -2022,12 +2018,12 @@ dialog.dismiss();
 //                case 2:
 //                    Utils.takeToNextActivity(MainActivity.this,BuildingTabActivity.class,null);
 //                    break;
-                case 2:
+                case 1:
                     loadFragment(R.string.fiveGParameter, new FiveGParametersFragment());
                     Config.onbackpress = "home";
                     break;
 
-                case 3:
+                case 2:
                     loadFragment(R.string.fiveGParameter, new ChceckingNewSimConditions());
                     Config.onbackpress = "home";
                     break;
@@ -2039,7 +2035,7 @@ dialog.dismiss();
 //                    new MainActivity.BackgroundTasktgetvalues("up").execute();
 //                    System.out.println(" Time is"+System.currentTimeMillis());
 //               break;
-                case 4:
+                case 3:
 
                     loadFragment(R.string.call_sms_mms,new Call_msg_fragment_New());
                     Config.onbackpress="home";
@@ -2049,7 +2045,7 @@ dialog.dismiss();
 //                    loadFragment(R.string.network_monitor_mms,new NetworkFragmentNew2());
 //                    Config.onbackpress="home";
 //                    break;
-                case 5:
+                case 4:
                     loadFragment(R.string.web_test,new WebTest());
                     Config.onbackpress="home";
                     break;
@@ -2063,12 +2059,12 @@ dialog.dismiss();
 //                loadFragment(R.string.speedtest,new SpeedTestFragment());
 //                Config.onbackpress="home";
 //                break;
-                case 6:
+                case 5:
                     loadFragment(R.string.call_sms_mms,new USSDTEST());
                     Config.onbackpress="home";
                     break;
 
-                case 7:
+                case 6:
                    // Intent allIntent = new Intent(MainActivity.this, ForegroundService.class);
                    // startService(allIntent);
                     loadFragment(R.string.new_video_test,new NewVideoFragmentIframe());
@@ -2079,12 +2075,12 @@ dialog.dismiss();
                    // bundleq.putString("flowType","rapid");
                    // Utils.takeToNextActivity(this,MainActivity3.class,bundleq);
                     //break;
-                case 8:
+                case 7:
                     loadFragment(R.string.speedtest,new SpeeDTestFragmentNew());
                     Config.onbackpress="home";
                     break;
 
-                case 9:
+                case 8:
                     loadFragment(R.string.sendsms,new SmsFragment());
                     Config.onbackpress="home";
                     break;
@@ -2096,33 +2092,33 @@ dialog.dismiss();
 //                    loadFragment(R.string.cts,new CtsFragment());
 //                    Config.onbackpress="home";
 //                    break;
-
-                case 10:
-                    Intent intent = new Intent(this, WebViewActivity.class);
-                    /* intent.putExtra("chartName",chartName);*/
-                    startActivity(intent);
-                    break;
-                case 11:
-                    Intent intent1 = new Intent(this, AppLaunch.class);
-
-                    /* intent.putExtra("chartName",chartName);*/
-                    startActivity(intent1);
-                    break;
-                case 12:
+//
+//                case 9:
+//                    Intent intent = new Intent(this, WebViewActivity.class);
+//                    /* intent.putExtra("chartName",chartName);*/
+//                    startActivity(intent);
+//                    break;
+//                case 10:
+//                    Intent intent1 = new Intent(this, AppLaunch.class);
+//
+//                    /* intent.putExtra("chartName",chartName);*/
+//                    startActivity(intent1);
+//                    break;
+                case 9:
                     /* intent.putExtra("chartName",chartName);*/
                     new DialogPopup("Manually change status").showClearLogDialog(this);
                     break;
 
-                case 13:
+                case 10:
                     /* intent.putExtra("chartName",chartName);*/
                     new DialogPopup("Manually Send Evt").sendEvtServerManually(this);
                     break;
 
-                case 14:
+                case 11:
                     /* intent.putExtra("chartName",chartName);*/
                     new DialogPopup("Manually Start All the Tests").startTestManually(this);
                     break;
-                case 15:
+                case 12:
                     Intent driveTestIntent = new Intent(this, HomeActivity.class);
                     startActivity(driveTestIntent);
                     break;
