@@ -187,7 +187,7 @@ public class Constants {
     public static final String JSON_ERROR ="Unable to load data!!";
     public static final int READ_TIMEOUT = 10000;
     public static final String NO_URL ="Kindly enter any url or ip" ;
-    public static String URL = "http://198.12.250.223/mtantu_server_voda_sdk/requesthandler";//alpha 3 server
+    public static String URL = "http://198.12.250.223/mtantu_server_airtel_drive/requesthandler";//alpha 3 server
 //    public static String URL = "http://1.38.10.149:7080/mtantu_server_voda_sdk/requesthandler";//for vodafone shared by yogesh sir
 //    public static String URL = "http://1.38.10.149:7080/voda_sdk";
     public static String USER_NUM = "";
